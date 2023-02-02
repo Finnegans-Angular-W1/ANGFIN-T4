@@ -41,6 +41,8 @@ const appRoutes:Routes=[
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    SharedModule,
     MatSliderModule
   ],
   providers: [],
