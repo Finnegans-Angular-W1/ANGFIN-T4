@@ -1,0 +1,46 @@
+<div class="registerCSS">
+    <div>
+        <form [formGroup]="form" (ngSubmit)="register()">
+            <mat-form-field class="campo" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input type="first_name" matInput autocomplete="off" formControlName="first_name" class="form-control">
+            </mat-form-field>
+            <div id="fNameError" *ngIf="(getFname?.invalid && getFname?.touched) || getFname?.dirty">
+                <small *ngIf="getFname?.errors?.['pattern']" class="text-danger">Por favor ingrese un nombre
+                    correcto</small>
+            </div>
+            <br>
+            <mat-form-field class="campo" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input type="last_name" matInput autocomplete="off" formControlName="last_name" class="form-control">
+            </mat-form-field>
+            <div id="lNameError" *ngIf="(getLname?.invalid && getLname?.touched) || getLname?.dirty">
+                <small *ngIf="getLname?.errors?.['pattern']" class="text-danger">Por favor ingrese un apellido
+                    correcto</small>
+            </div>
+            <br>
+            <mat-form-field class="campo" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput autocomplete="off" formControlName="email" class="form-control" required>
+            </mat-form-field>
+            <div id="emailError" *ngIf="(getEmail?.invalid && getEmail?.touched) || getEmail?.dirty">
+                <small *ngIf="getEmail?.errors?.['pattern']" class="text-danger">Por favor ingrese una direccion de
+                    e-mail correcta</small>
+            </div>
+            <br>
+            <mat-form-field class="campo" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password" class="form-control"
+                    required>
+            </mat-form-field>
+            <div id="passError" *ngIf="(getPass?.invalid && getPass?.touched) || getPass?.dirty">
+                <small *ngIf="getPass?.errors?.['minlength']" class="text-danger">Por favor ingrese una contraseña de 6
+                    caracteres minimo</small>
+            </div>
+            <br>
+            <button mat-raised-button color="primary" type="submit" class="campo button">Registrate</button>
+        </form>
+
+    </div>
+
+</div>
