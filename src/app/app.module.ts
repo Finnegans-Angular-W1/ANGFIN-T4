@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { environment } from '../environments/environment';
     SharedModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ name: 'TEST' })
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
