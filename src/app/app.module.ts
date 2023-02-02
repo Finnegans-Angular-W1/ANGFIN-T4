@@ -4,19 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './Componentes/home/home.component';
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HomeComponent } from './Componentes/home/home.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSlideToggleModule,
     MatSlideToggleModule
   ],
   providers: [],
