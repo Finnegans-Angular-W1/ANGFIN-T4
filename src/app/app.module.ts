@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -39,7 +40,8 @@ const appRoutes:Routes=[
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatSliderModule
+    MatSliderModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
