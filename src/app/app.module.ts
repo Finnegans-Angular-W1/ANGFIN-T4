@@ -5,14 +5,37 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule, Routes } from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
+
+//Components
+import { LoginComponent } from './login/login.component';
+
+//Material
+import {MatCardModule } from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+
+const appRoutes:Routes=[
+  {path:'login',component:LoginComponent}
+];
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
