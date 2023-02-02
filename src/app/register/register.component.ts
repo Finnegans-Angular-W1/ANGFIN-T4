@@ -39,15 +39,15 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    if (this.getEmail?.errors?.['pattern']){
-      var temp= document.getElementById("emailError")
+    if (this.getEmail?.errors?.['pattern']) {
+      var temp = document.getElementById("emailError")
     }
-    else if(this.getPass?.errors?.['minlength']){
-      var temp= document.getElementById("passError")
+    else if (this.getPass?.errors?.['minlength']) {
+      var temp = document.getElementById("passError")
     }
-    else{
-      const email=this.form.value.email;
-      const password =this.form.value.password;
+    else {
+      const email = this.form.value.email;
+      const password = this.form.value.password;
     }
 
   }
