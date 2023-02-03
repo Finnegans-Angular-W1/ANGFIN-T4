@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   // { path: 'home', component: Home },
@@ -29,6 +31,10 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
   ]
 })
 export class SharedModule { }

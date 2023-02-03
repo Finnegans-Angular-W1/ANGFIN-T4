@@ -8,6 +8,7 @@ import { logout } from '../../core/state/actions/auth.actions';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidenav-drawer-overview-example.css'],
 })
 export class SidebarComponent implements OnInit {
 
