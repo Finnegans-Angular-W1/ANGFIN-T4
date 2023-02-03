@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const routes: Routes = [
   // { path: 'home', component: Home },
@@ -17,10 +18,12 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SidebarComponent,
+    SpinnerComponent,
   ],
   exports: [
     SidebarComponent,
-    RouterModule
+    RouterModule,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
