@@ -14,16 +14,18 @@
         <a mat-list-item routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page">Plazos Fijos</a>
         <a mat-list-item routerLink="/contactos" routerLinkActive="active" ariaCurrentWhenActive="page">Contactos</a>
         <a mat-list-item routerLink="/perfil" routerLinkActive="active" ariaCurrentWhenActive="page">Perfil</a>
-        <a mat-list-item routerLink="/billeteras" routerLinkActive="active" ariaCurrentWhenActive="page">/billeteras</a>
+        <a mat-list-item routerLink="/billeteras" routerLinkActive="active" ariaCurrentWhenActive="page">Billeteras</a>
       </mat-nav-list>
+      <button (click)="logout()" mat-button color="accent">Log Out</button>
     </mat-sidenav>
     <mat-sidenav-content>
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
 
 
-<button (click)="logout()">Log Out</button>
+
 
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
