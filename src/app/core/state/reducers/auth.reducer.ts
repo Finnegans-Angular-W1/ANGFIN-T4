@@ -25,9 +25,9 @@ export const authReducer = createReducer(
         return { ...state, loading: true }
     }),
     on(sendRegisterFormSuccess, (state) => {
-        return { ...state, error: null }
+        return { ...state, error: null, loading: false }
     }),
     on(logout, (state) => {
-        return { ...state, error: null, token: undefined }
+        return { ...state, error: null, token: undefined, user: {} as User }
     })
 )
