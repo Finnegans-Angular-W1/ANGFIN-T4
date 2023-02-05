@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -23,11 +25,12 @@ const appRoutes:Routes=[
   {path:'login',component:LoginComponent}
 ];
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ const appRoutes:Routes=[
     MatInputModule,
     ReactiveFormsModule,
     MatSliderModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

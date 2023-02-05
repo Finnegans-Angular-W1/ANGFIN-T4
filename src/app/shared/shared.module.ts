@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   // { path: 'home', component: Home },
   // { path: 'ingresos', component: Ingresos },
