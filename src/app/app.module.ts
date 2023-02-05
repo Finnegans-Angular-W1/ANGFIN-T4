@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -26,6 +28,7 @@ const appRoutes:Routes=[
   {path:'register',component:RegisterComponent}
 ];
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,6 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatCardModule,
@@ -45,7 +47,9 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
-    MatSliderModule
+    MatSliderModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
