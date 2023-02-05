@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
@@ -51,7 +54,11 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     MatSlideToggleModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
