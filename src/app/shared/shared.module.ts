@@ -4,6 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SpinnerComponent } from './spinner/spinner.component';
 
+
 const routes: Routes = [
   // { path: 'home', component: Home },
   // { path: 'ingresos', component: Ingresos },
