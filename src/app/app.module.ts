@@ -36,7 +36,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
-import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -58,10 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
-    MatSliderModule,
-    BrowserAnimationsModule,
     MatSlideToggleModule,
-    BrowserAnimationsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
