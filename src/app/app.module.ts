@@ -5,6 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HomeComponent } from './Componentes/home/home.component';
+import { E404Component } from './e404/e404.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -25,16 +32,26 @@ const appRoutes:Routes=[
   {path:'register',component:RegisterComponent}
 ];
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { ROOT_REDUCERS } from './core/state/app.state';
+import { AuthEffects } from './core/state/effects/auth.effects';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    E404Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatCardModule,
@@ -43,9 +60,17 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
-    MatSliderModule
+    MatSlideToggleModule,
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([AuthEffects]),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

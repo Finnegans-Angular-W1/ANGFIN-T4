@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import * as path from 'path';
+import { E404Component } from './e404/e404.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'**', component: E404Component}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
