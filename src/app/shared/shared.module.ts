@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { TitulosComponent } from './titulos/titulos.component';
 
 
 const routes: Routes = [
@@ -20,11 +21,12 @@ const routes: Routes = [
   declarations: [
     SidebarComponent,
     SpinnerComponent,
+    TitulosComponent,
   ],
   exports: [
     SidebarComponent,
-    RouterModule,
-    SpinnerComponent
+    SpinnerComponent,
+    TitulosComponent
   ],
   imports: [
     CommonModule,
