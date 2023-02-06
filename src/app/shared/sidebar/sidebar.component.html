@@ -1,16 +1,32 @@
-<p>Sidebar</p>
-<nav>
-  <ul>
-    <li><a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
-    <li><a routerLink="/ingresos" routerLinkActive="active" ariaCurrentWhenActive="page">Ingresos</a></li>
-    <li><a routerLink="/egresos" routerLinkActive="active" ariaCurrentWhenActive="page">Egresos</a></li>
-    <li><a routerLink="/enviarDinero" routerLinkActive="active" ariaCurrentWhenActive="page">Enviar Dinero</a></li>
-    <li><a routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page">Plazos Fijos</a></li>
-    <li><a routerLink="/contactos" routerLinkActive="active" ariaCurrentWhenActive="page">Contactos</a></li>
-    <li><a routerLink="/perfil" routerLinkActive="active" ariaCurrentWhenActive="page">Perfil</a></li>
-    <li><a routerLink="/billeteras" routerLinkActive="active" ariaCurrentWhenActive="page">Billeteras</a></li>
-  </ul>
-</nav>
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Menu-Sidebar</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+        <a mat-list-item routerLink="/ingresos" routerLinkActive="active" ariaCurrentWhenActive="page">Ingresos</a>
+        <a mat-list-item routerLink="/egresos" routerLinkActive="active" ariaCurrentWhenActive="page">Egresos</a>
+        <a mat-list-item routerLink="/enviarDinero" routerLinkActive="active" ariaCurrentWhenActive="page">Enviar Dinero</a>
+        <a mat-list-item routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page">Plazos Fijos</a>
+        <a mat-list-item routerLink="/contactos" routerLinkActive="active" ariaCurrentWhenActive="page">Contactos</a>
+        <a mat-list-item routerLink="/perfil" routerLinkActive="active" ariaCurrentWhenActive="page">Perfil</a>
+        <a mat-list-item routerLink="/billeteras" routerLinkActive="active" ariaCurrentWhenActive="page">Billeteras</a>
+      </mat-nav-list>
+      <button (click)="logout()" mat-button color="accent">Log Out</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+
+
 <!-- The routed views render in the <router-outlet>-->
   
 <router-outlet></router-outlet>
