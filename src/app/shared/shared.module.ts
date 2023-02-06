@@ -25,9 +25,7 @@ const routes: Routes = [
   ],
   exports: [
     SidebarComponent,
-    RouterModule,
-    SpinnerComponent
-    RouterModule,
+    SpinnerComponent,
     TitulosComponent
   ],
   imports: [
