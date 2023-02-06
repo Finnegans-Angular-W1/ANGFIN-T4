@@ -11,6 +11,7 @@ import { LoadingInterceptor } from './core/services/interceptors/loading.interce
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
+import { E404Component } from './e404/e404.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -42,6 +43,8 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    E404Component,
     LoginComponent,
     RegisterComponent,
     HomeComponent
