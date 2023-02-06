@@ -8,6 +8,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { TitulosComponent } from './titulos/titulos.component';
+
 
 const routes: Routes = [
   // { path: 'home', component: Home },
@@ -23,10 +26,13 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SidebarComponent,
+    SpinnerComponent,
+    TitulosComponent,
   ],
   exports: [
     SidebarComponent,
-    RouterModule
+    SpinnerComponent,
+    TitulosComponent
   ],
   imports: [
     CommonModule,
