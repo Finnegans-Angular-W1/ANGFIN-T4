@@ -37,6 +37,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
+import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
 
 
 
@@ -47,7 +48,8 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    EnviodedineroComponent
   ],
   imports: [
     BrowserModule,
