@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    DialogComponent,
   ],
   exports: [
     SidebarComponent,
