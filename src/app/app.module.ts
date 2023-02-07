@@ -47,7 +47,7 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
     RegisterComponent,
     HomeComponent
   ],
