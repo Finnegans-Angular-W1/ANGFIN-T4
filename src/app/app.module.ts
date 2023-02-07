@@ -49,6 +49,9 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     E404Component,
     LoginComponent,
     RegisterComponent,
+    HomeComponent
+    RegisterComponent,
+    HomeComponent
     DivisasComponent,
     TipoDeCambioComponent
   ],
