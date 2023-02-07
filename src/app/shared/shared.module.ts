@@ -12,6 +12,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
     SpinnerComponent,
     TitulosComponent,
     DialogComponent,
+    TransactionsFormComponent,
   ],
   exports: [
     SidebarComponent,
