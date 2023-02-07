@@ -38,6 +38,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 
 
 
@@ -48,7 +49,8 @@ import { DivisasComponent } from './Componentes/divisas/divisas.component';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    DivisasComponent
+    DivisasComponent,
+    TipoDeCambioComponent
   ],
   imports: [
     BrowserModule,
