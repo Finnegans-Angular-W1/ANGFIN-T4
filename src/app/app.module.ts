@@ -48,6 +48,8 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     LoginComponent,
     RegisterComponent,
     HomeComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
