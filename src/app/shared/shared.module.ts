@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
   ]
 })
 export class SharedModule { }
