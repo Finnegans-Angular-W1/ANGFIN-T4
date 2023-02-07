@@ -47,7 +47,6 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
