@@ -1,1 +1,38 @@
-<p>transactions-form works!</p>
+<div class="container">
+    <div class="row-flex">
+        <div class="card">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <h4 class="title">CREAR TRANSACCIÓN</h4>
+                <div class="row-flex">
+                    <mat-form-field appearance="outline" class="full-width margin-y">
+                        <mat-label>Monto</mat-label>
+                        <input formControlName="amount" type="number" matInput>
+                        <mat-error>
+                            El monto es obligatorio. (Debe ser mayor a 0)
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row-flex">
+                    <mat-form-field appearance="outline" class="full-width margin-y">
+                        <mat-label>Concepto</mat-label>
+                        <input formControlName="concept" type="text" matInput>
+                        <mat-error>
+                            El concepto es obligatorio.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row-flex">
+                    <div class="margin-y full-width">
+                        <button mat-raised-button color="primary" class="margin-y full-width">
+                            <mat-icon>check_circle</mat-icon> COMPLETAR OPERACIÓN
+                        </button>
+                        <br>
+                        <button mat-stroked-button color="accent" class="margin-y full-width">
+                            <mat-icon>cancel</mat-icon> CANCELAR OPERACIÓN
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

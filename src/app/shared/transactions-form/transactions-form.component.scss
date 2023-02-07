@@ -1,0 +1,93 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+
+.row-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.full-width {
+    width: 90%;
+    text-align: center;
+}
+
+.title {
+    padding: 30px;
+    text-align: center;
+    font-size: large;
+}
+
+.item-center {
+    justify-content: center;
+}
+
+.margin-y {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    .card {
+        width: 75%;
+    }
+    .full-width {
+        width: 75%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+    .card {
+        width: 75%;
+    }
+    .full-width {
+        width: 60%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+    .card {
+        width: 75%;
+    }
+    .full-width {
+        width: 50%;
+    }
+}
