@@ -38,6 +38,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
 import { FooterComponent } from './Componentes/footer/footer.component';
+import { DivisasComponent } from './Componentes/divisas/divisas.component';
 
 
 
@@ -49,7 +50,11 @@ import { FooterComponent } from './Componentes/footer/footer.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    DivisasComponent,
+    HomeComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
