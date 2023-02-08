@@ -49,10 +49,20 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     E404Component,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
     RegisterComponent,
     HomeComponent,
     DivisasComponent,
     TipoDeCambioComponent
+=======
+<<<<<<< HEAD
+    DivisasComponent
+=======
+    HomeComponent
+    RegisterComponent,
+    HomeComponent
+>>>>>>> 87a3ab1ab0f0ae1fda3a9def69a337f6c4a3128a
+>>>>>>> 990cc36c748f9dc0d21ce681a85fc4a5daf57d63
   ],
   imports: [
     BrowserModule,

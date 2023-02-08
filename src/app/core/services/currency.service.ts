@@ -11,8 +11,7 @@ getCurrencyService: any;
 constructor(private http: HttpClient) {}
 
 getExchangeRate(baseCurrency: string, targetCurrency: string): Observable<number>{
-    return this.http.get<number | any >(`https://v6.exchangerate-api.com/v6/55b3dc38799864c9e8a41f19/latest/USD${baseCurrency}`)
+    return this.http.get<number | any >(`"base":"ARS","last_updated":1675689300,"exchange_rates":{"USD":0.013286}${baseCurrency}`)
     .pipe(map(rates => rates [targetCurrency]));
 }
-
 }
