@@ -25,6 +25,7 @@ import {MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
 
 
 const appRoutes:Routes=[
@@ -37,6 +38,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
+import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 
 
@@ -47,9 +49,8 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
-    RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PasswordResetComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +67,8 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [
     {
