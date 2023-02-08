@@ -37,6 +37,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
+import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 
@@ -45,24 +46,13 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     E404Component,
     LoginComponent,
-    RegisterComponent,
-<<<<<<< HEAD
-    RegisterComponent,
-    HomeComponent,
+    FooterComponent,
     DivisasComponent,
-    TipoDeCambioComponent
-=======
-<<<<<<< HEAD
-    DivisasComponent
-=======
-    HomeComponent
+    HomeComponent,
+    TipoDeCambioComponent,
     RegisterComponent,
-    HomeComponent
->>>>>>> 87a3ab1ab0f0ae1fda3a9def69a337f6c4a3128a
->>>>>>> 990cc36c748f9dc0d21ce681a85fc4a5daf57d63
   ],
   imports: [
     BrowserModule,
