@@ -44,17 +44,12 @@ import { DivisasComponent } from './Componentes/divisas/divisas.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     E404Component,
     LoginComponent,
     RegisterComponent,
-<<<<<<< HEAD
-    DivisasComponent
-=======
-    HomeComponent
+    DivisasComponent,
+    HomeComponent,
     RegisterComponent,
-    HomeComponent
->>>>>>> 87a3ab1ab0f0ae1fda3a9def69a337f6c4a3128a
   ],
   imports: [
     BrowserModule,
