@@ -37,7 +37,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
-import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
+import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
+
 
 
 
@@ -49,7 +50,7 @@ import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    EnviodedineroComponent
+    EnviodedineroComponent,
   ],
   imports: [
     BrowserModule,
