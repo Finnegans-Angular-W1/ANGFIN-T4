@@ -37,6 +37,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
+import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 
 
@@ -48,9 +49,8 @@ import { DivisasComponent } from './Componentes/divisas/divisas.component';
     E404Component,
     LoginComponent,
     RegisterComponent,
+    FooterComponent,
     DivisasComponent,
-    HomeComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,
