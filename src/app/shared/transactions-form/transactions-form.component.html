@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-sm-12 col-lg-6 col-12">
+            <div class="card p-5 border-0 shadow rounded-4 mb-5 mt-5">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <p *ngIf="!this.transaction" class="fs-4 fw-bold text-center mb-5">CREAR TRANSACCIÓN</p>
+                    <p *ngIf="this.transaction" class="fs-4 fw-bold text-center mb-5">EDITAR TRANSACCIÓN</p>
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Monto</mat-label>
+                            <input formControlName="amount" type="number" matInput>
+                            <mat-error class="text-center">
+                                El monto es obligatorio. (Debe ser mayor a 0)
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Concepto</mat-label>
+                            <input formControlName="concept" type="text" matInput>
+                            <mat-error class="text-center">
+                                El concepto es obligatorio.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button mat-raised-button color="primary" class="p-1">
+                            <mat-icon>check_circle</mat-icon> COMPLETAR OPERACIÓN
+                        </button>
+                        <button mat-stroked-button color="accent" class="p-1">
+                            <mat-icon>cancel</mat-icon> CANCELAR OPERACIÓN
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
