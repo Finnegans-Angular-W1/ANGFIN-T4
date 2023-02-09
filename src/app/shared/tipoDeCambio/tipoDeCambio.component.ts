@@ -15,11 +15,11 @@ export class TipoDeCambioComponent implements OnInit {
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {
-    this.currencyService.getExchangeRate(this.baseCurrency, this.targetCurrency)
-    .subscribe((rates : any) => {
+    // this.currencyService.getExchangeRate(this.baseCurrency, this.targetCurrency)
+    // .subscribe((rates : any) => {
       
-      this.exchangeRate = rates;
-    } )
+    //   this.exchangeRate = rates;
+    // } )
     
   }
 
