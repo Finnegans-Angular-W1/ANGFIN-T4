@@ -40,19 +40,21 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     E404Component,
     LoginComponent,
     RegisterComponent,
     EnviodedineroComponent,
     FooterComponent,
     DivisasComponent,
+    HomeComponent,
+    TipoDeCambioComponent,
   ],
   imports: [
     BrowserModule,
