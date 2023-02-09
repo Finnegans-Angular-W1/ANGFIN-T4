@@ -10,6 +10,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -28,6 +35,8 @@ const routes: Routes = [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    DialogComponent,
+    TransactionsFormComponent,
   ],
   exports: [
     SidebarComponent,
@@ -43,6 +52,10 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
