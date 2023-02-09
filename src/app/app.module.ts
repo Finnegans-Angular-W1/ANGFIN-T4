@@ -56,7 +56,7 @@ import { DivisasComponent } from './Componentes/divisas/divisas.component';
     DivisasComponent,
     HomeComponent,
     RegisterComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
