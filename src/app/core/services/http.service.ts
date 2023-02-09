@@ -22,4 +22,8 @@ export class HttpService {
     return this.http.post<T>(url, body, activateHeader ? { headers: this._headers } : {});
   }
 
+  public put<T>(url: string, body: any, activateHeader: boolean = false): Observable<T> {
+    return this.http.put<T>(url, body, activateHeader ? { headers: this._headers } : {});
+  }
+
 }
