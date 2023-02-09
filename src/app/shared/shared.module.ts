@@ -10,6 +10,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
+import { InvestmentCalcComponent } from './investment-calc/investment-calc.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 
 const routes: Routes = [
@@ -28,6 +33,8 @@ const routes: Routes = [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    InvestmentCalcComponent,
+    
   ],
   exports: [
     SidebarComponent,
@@ -43,6 +50,10 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatDatepickerModule
+    
   ]
 })
 export class SharedModule { }

@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
+import {MatListModule} from '@angular/material/list';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
@@ -19,12 +20,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 //Components
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 
 //Material
 import {MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes:Routes=[
@@ -40,6 +44,7 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +52,9 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     E404Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    TransactionsListComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,11 @@ import { AuthEffects } from './core/state/effects/auth.effects';
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    MatFormFieldModule,
+    FormsModule
+    
   ],
   providers: [
     {
