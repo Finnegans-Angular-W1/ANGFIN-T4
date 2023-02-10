@@ -14,7 +14,7 @@ export class AuthEffects {
             mergeMap((action: any) => this.authService.login(action.user)
                 .pipe(
                     map(token => ({ type: '[Login View] Send login form success', token })),
-                    catchError(() => EMPTY)
+                    catchError(async (error) => ({ type: '[Login View] Send login form error', error }))
                 ))
         );
     });

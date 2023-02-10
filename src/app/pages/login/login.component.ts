@@ -4,7 +4,9 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
 import { sendLoginForm } from '../../core/state/actions/auth.actions';
 import { Router } from '@angular/router';
-import { selectToken } from '../../core/state/selectors/auth.selectors';
+import { selectAuthError, selectToken } from '../../core/state/selectors/auth.selectors';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +16,10 @@ import { selectToken } from '../../core/state/selectors/auth.selectors';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  error$ = this.store.select(selectAuthError);
+  error: any = null;
 
-  constructor(private fb:FormBuilder, private store: Store<AppState>, private router: Router){
+  constructor(private fb:FormBuilder, private store: Store<AppState>, private router: Router, private dialog: MatDialog){
     this.form = this.fb.group({
       email:new FormControl('',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       password:new FormControl ('',[Validators.required,Validators.minLength(6)]),
@@ -32,7 +36,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.store.select(selectToken).subscribe(res => console.log(res));
+    this.error$.subscribe(error => this.error = error);
   }
 
   Login(){
@@ -45,6 +49,19 @@ export class LoginComponent implements OnInit {
     else{
       this.store.dispatch(sendLoginForm({user: this.form.value}));
       setTimeout(() => {
+        if (this.error) {
+          this.dialog.open(
+            DialogComponent, {
+              data: {
+                title: 'Error al iniciar sesión',
+                message: 'Email y/o contraseña incorrecto',
+                confirmText: 'Aceptar',
+                cancelText: 'Cerrar'
+              }
+            }
+          )
+          return;
+        }
         this.router.navigateByUrl('/home');
       }, 1000);
     }
