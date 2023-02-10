@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 mt-5">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-12">
+                        <div class="mb-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Monto</mat-label>
+                                <input formControlName="amount" type="number" matInput>
+                                <mat-error class="text-center">
+                                    El monto es obligatorio. (Debe ser mayor a 0)
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-12">
+                        <div class="mb-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Tipo de conversión</mat-label>
+                                <mat-select formControlName="method">
+                                  <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                                    {{currency.viewValue}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error class="text-center">
+                                    Elija el método de conversión
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button mat-raised-button color="primary" class="p-1">
+                        <mat-icon>check_circle</mat-icon> CONVERTIR
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col mt-5 text-center">
+            <p *ngIf="this.amountConverted">La conversión es de {{this.amountConverted | currency}}</p>
+        </div>
+    </div>
+</div>

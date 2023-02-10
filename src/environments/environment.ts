@@ -4,7 +4,14 @@
 
 export const environment = {
   production: false,
-  api: "http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com"
+  api: "http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com",
+  endpoints: {
+    currency: {
+      convert(base: string, target: string) { 
+        return `https://v6.exchangerate-api.com/v6/526dbf671853f6b99a392d7f/pair/${base}/${target}` 
+      }
+    }
+  }
 };
 
 /*
