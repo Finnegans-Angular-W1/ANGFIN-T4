@@ -14,9 +14,13 @@ export class TipoDeCambioComponent implements OnInit {
   ngOnInit() {
     this.http.get('https://api.exchangerate-api.com/v4/latest/USD')
     .subscribe(data => {
+    // this.currencyService.getExchangeRate(this.baseCurrency, this.targetCurrency)
+    // .subscribe((rates : any) => {
       
       this.exchangeRate = data;
     } )
+    //   this.exchangeRate = rates;
+    // } )
     
   }
 
