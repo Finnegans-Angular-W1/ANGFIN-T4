@@ -14,6 +14,6 @@ export class HttpService {
   }
 
   public get<T>(url: string, activateHeader:boolean = false ):Observable<T> {
-    return this.http.get<T>(url, activateHeader ? { headers: this._headers }: {});
+    return this.http.get<T>(url, activateHeader ? { headers: this._headers }: { });
   }
 }
