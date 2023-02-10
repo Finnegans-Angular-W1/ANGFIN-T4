@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from 'src/app/core/services/currency.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-tipoDeCambio',
   templateUrl: './tipoDeCambio.component.html',
   styleUrls: ['./tipoDeCambio.component.css']
 })
 export class TipoDeCambioComponent implements OnInit {
-  baseCurrency = "USD";
-  targetCurrency = "ARG";
-  exchangeRate! : number;
-  
 
-  constructor(private currencyService: CurrencyService) { }
+  exchangeRate: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.currencyService.getExchangeRate(this.baseCurrency, this.targetCurrency)
-    .subscribe((rates : any) => {
+    this.http.get('https://api.exchangerate-api.com/v4/latest/USD')
+    .subscribe(data => {
       
-      this.exchangeRate = rates;
+      this.exchangeRate = data;
     } )
     
   }

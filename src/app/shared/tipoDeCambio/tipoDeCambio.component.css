@@ -1,0 +1,16 @@
+h2{
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+p{
+    font-size: larger;
+    background-color: white;
+    border: solid;
+}
+.card{
+    width: 18rem;
+}
+.card-body{
+    background-image: url(https://www.freepik.es/foto-gratis/billie-dolar-fondo-dinero_1025791.htm#query=dolar&from_query=dolars&position=1&from_view=search&track=sph);
+}
