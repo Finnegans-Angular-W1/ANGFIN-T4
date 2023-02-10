@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 // import custom validator to validate that password and confirm password fields match
 import { MustMatch } from './_helpers';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-password-reset',
@@ -16,7 +17,7 @@ export class PasswordResetComponent {
   hide = true;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private auth: AuthService) { }
 
   resetPasswordForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -30,11 +31,14 @@ export class PasswordResetComponent {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.resetPasswordForm.value.password);
     // stop here if form is invalid
     if (this.resetPasswordForm.invalid) {
       return;
     }
-    // TODO: Use EventEmitter with form value
-    console.log(this.resetPasswordForm.value);
+    this.auth.resetPassword(this.resetPasswordForm.value.password).subscribe(resp => 
+      console.log(resp)
+      // Debería redireccionar
+      )
   }
 }

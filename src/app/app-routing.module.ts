@@ -13,10 +13,9 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: PasswordResetComponent, canActivate: [AuthGuard] },
   { path: 'transactions-form', component: TransactionsFormComponent },
   { path: 'currency-converter', component: CurrencyConverterComponent },
-  {path:'**', component: E404Component}
   {path:'**', component: E404Component},
   {path:'password-reset', component: PasswordResetComponent}
 ];

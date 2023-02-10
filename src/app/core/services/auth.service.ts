@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 
 import { selectToken } from '../state/selectors/auth.selectors';
 import { selectUser } from '../state/selectors/auth.selectors';
+import { AppState } from '../state/app.state';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class AuthService {
   getUserDetails() {
     return this.store.select(selectToken).pipe(
       switchMap((token) => {
-        return this.http.get(`${this.url}/auth/me`, {headers: {'Authorization': 'Bearer ' + token}})
+        return this.http.get(`${this.url}/auth/me`, { headers: { 'Authorization': 'Bearer ' + token } })
       })
     )
   }
@@ -53,14 +54,13 @@ export class AuthService {
     return true;
   }
 
-  public resetPassword() {
+  resetPassword(password: any) {
     return this.store.select(selectUser).pipe(
       switchMap((user: any) => {
-        return this.http.get(`${this.url}/auth/me`, { headers: { 'Authorization': 'Bearer ' + user } })
-      })
-
-    this.http.get<T>(`http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com/auth/me`, activateHeader ? { headers: this._headers } : {});
-    const userID = "asdasdasd";
-    return this.http.patch<User>(`http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com/auth/me`, user);
+        return this.http.patch(`${this.url}/users/resetPassword/${user.id}`, {password: password})
+      }
+      )
+    )
   }
+
 }
