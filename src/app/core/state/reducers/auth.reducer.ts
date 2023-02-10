@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { AuthState } from "../../interfaces/auth.state";
 import { User } from "../../interfaces/user";
-import { sendLoginForm, sendLoginFormSuccess, sendLoginFormError, sendRegisterFormError, sendRegisterForm, sendRegisterFormSuccess, logout } from '../actions/auth.actions';
+import { sendLoginForm, sendLoginFormSuccess, sendLoginFormError, sendRegisterFormError, sendRegisterForm, sendRegisterFormSuccess, logout, setUserState } from '../actions/auth.actions';
 
 
 
@@ -29,5 +29,8 @@ export const authReducer = createReducer(
     }),
     on(logout, (state) => {
         return { ...state, error: null, token: undefined, user: {} as User }
+    }),
+    on(setUserState, (state, {user}) => {
+        return { ...state, user }
     })
 )

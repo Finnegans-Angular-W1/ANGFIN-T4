@@ -10,6 +10,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
+import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 
 
 const routes: Routes = [
@@ -28,6 +37,9 @@ const routes: Routes = [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    DialogComponent,
+    TransactionsFormComponent,
+    CurrencyConverterComponent,
   ],
   exports: [
     SidebarComponent,
@@ -43,6 +55,11 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

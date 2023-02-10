@@ -30,6 +30,18 @@ export class AuthEffects {
         );
     });
 
+    setUser$ = createEffect(() => {
+        return this.actions$.pipe(
+            ofType('[Login View] Send login form success'),
+            mergeMap(() => this.authService.getUserDetails()
+                .pipe(
+                    map(user => ({ type: '[Login View] Set user state', user})),
+                    catchError(() => EMPTY)
+                )
+            )
+        )
+    })
+
     constructor(
         private actions$: Actions,
         private authService: AuthService

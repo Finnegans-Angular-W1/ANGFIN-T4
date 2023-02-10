@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from "rxjs/operators";
@@ -26,6 +26,14 @@ export class AuthService {
 
   register(user: User) {
     return this.http.post(`${this.url}/users`, user);
+  }
+
+  getUserDetails() {
+    return this.store.select(selectToken).pipe(
+      switchMap((token) => {
+        return this.http.get(`${this.url}/auth/me`, {headers: {'Authorization': 'Bearer ' + token}})
+      })
+    )
   }
 
   setSession(token: string) {

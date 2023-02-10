@@ -17,8 +17,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 
 //Components
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 //Material
 import {MatCardModule } from '@angular/material/card';
@@ -28,16 +28,16 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 
 
-const appRoutes:Routes=[
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent}
-];
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
+import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
+import { FooterComponent } from './Componentes/footer/footer.component';
+import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 
@@ -45,10 +45,14 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     E404Component,
     LoginComponent,
     RegisterComponent,
+    EnviodedineroComponent,
+    FooterComponent,
+    DivisasComponent,
+    HomeComponent,
+    TipoDeCambioComponent,
     HomeComponent,
     PasswordResetComponent,
   ],
@@ -56,7 +60,6 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatButtonModule,
     MatInputModule,
