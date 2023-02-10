@@ -2,13 +2,13 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
     </mat-card-header>
-    <mat-card-title>{{firtsname}} {{lastname}}</mat-card-title>
+    <mat-card-title>{{usuario.first_name}} {{usuario.last_name}}</mat-card-title>
     <mat-card-content>
         <mat-list role="list">
-            <mat-list-item role="listitem">Nombre: {{firtsname}}</mat-list-item>
-            <mat-list-item role="listitem">Apellido: {{lastname}}</mat-list-item>
-            <mat-list-item role="listitem">Email: {{useremail}}</mat-list-item>
-            <mat-list-item role="listitem">Monto: ${{useramount}}</mat-list-item>
+            <mat-list-item role="listitem">Nombre: {{usuario.first_name}}</mat-list-item>
+            <mat-list-item role="listitem">Apellido: {{usuario.last_name}}</mat-list-item>
+            <mat-list-item role="listitem">Email: {{usuario.email}}</mat-list-item>
+            <mat-list-item role="listitem">Monto: ${{usuario.points}}</mat-list-item>
         </mat-list>
     </mat-card-content>
   </mat-card>
