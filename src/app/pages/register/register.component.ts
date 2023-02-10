@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../core/state/app.state';
+import { selectAuthError } from '../../core/state/selectors/auth.selectors';
+import { sendRegisterForm } from '../../core/state/actions/auth.actions';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +16,10 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  error$ = this.store.select(selectAuthError);
+  error: any = null
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router, private dialog: MatDialog) {
     this.form = this.fb.group({
       first_name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')],),
       last_name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]),
@@ -20,6 +29,9 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.error$.subscribe(error => {
+      this.error = error;
+    });
   }
 
   get getEmail() {
@@ -46,10 +58,28 @@ export class RegisterComponent implements OnInit {
       var temp = document.getElementById("passError")
     }
     else {
-      const email = this.form.value.email;
-      const password = this.form.value.password;
+      console.log(this.form.value);
+      this.store.dispatch(sendRegisterForm({user: this.form.value}));
+      setTimeout(() => {
+        if (this.error) {
+          this.dialog.open(
+            DialogComponent, {
+              data: {
+                title: 'Error al registrarse',
+                message: this.error.error.error,
+                confirmText: 'Aceptar',
+                cancelText: 'Cerrar'
+              }
+            }
+          )
+          return;
+        }
+        this.router.navigateByUrl('/login');
+      }, 1000);
     }
 
   }
 
 }
+
+

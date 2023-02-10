@@ -25,7 +25,7 @@ export class AuthEffects {
             mergeMap((action: any) => this.authService.register(action.user)
                 .pipe(
                     map(() => ({ type: '[Register View] Send register form success' })),
-                    catchError(() => EMPTY)
+                    catchError(async (error) => ({ type: '[Register View] Send register form error', error }))
                 ))
         );
     });
