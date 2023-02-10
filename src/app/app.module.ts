@@ -49,12 +49,12 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     AppComponent,
     E404Component,
     LoginComponent,
+    RegisterComponent,
+    EnviodedineroComponent,
     FooterComponent,
     DivisasComponent,
     HomeComponent,
     TipoDeCambioComponent,
-    RegisterComponent,
-    EnviodedineroComponent
   ],
   imports: [
     BrowserModule,
