@@ -6,6 +6,8 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class CurrencyService {
+  [x: string]: any;
+  getExchangeRate: any;
 
   constructor( private http: HttpClient ) { }
 
