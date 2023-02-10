@@ -41,20 +41,21 @@ import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodediner
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
+import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     E404Component,
     LoginComponent,
-    RegisterComponent,
-    HomeComponent,
-    EnviodedineroComponent,
     FooterComponent,
     DivisasComponent,
+    HomeComponent,
+    TipoDeCambioComponent,
+    RegisterComponent,
+    EnviodedineroComponent
   ],
   imports: [
     BrowserModule,
