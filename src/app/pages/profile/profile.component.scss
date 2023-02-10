@@ -1,0 +1,25 @@
+.example-card {
+    margin: 1rem auto;
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    height: 5rem;
+    width: 5rem;
+    background-image: url('https://www.pngitem.com/pimgs/m/592-5922762_user-icon-material-design-hd-png-download.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .example-header-image{
+    display: block;
+    margin: 1rem auto;
+  }
+    mat-card-title{
+        text-align: center;
+    }
+
+
+::ng-deep .mat-card-header-text {
+    display: none;
+  }

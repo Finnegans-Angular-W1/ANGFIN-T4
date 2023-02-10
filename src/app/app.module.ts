@@ -25,7 +25,7 @@ import {MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
-
+import {MatListModule} from '@angular/material/list';
 
 
 import { StoreModule } from '@ngrx/store';
@@ -37,6 +37,7 @@ import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodediner
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -51,6 +52,7 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     DivisasComponent,
     HomeComponent,
     TipoDeCambioComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
-    HttpClientModule
+    HttpClientModule, 
+    MatListModule
   ],
   providers: [
     {
