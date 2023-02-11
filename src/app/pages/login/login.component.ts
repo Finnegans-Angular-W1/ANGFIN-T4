@@ -26,15 +26,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  get getEmail(){
-    return this.form.get('email')
-  }
-
-  get getPass(){
-    return this.form.get('password')
-  }
-
-
   ngOnInit(): void {
     this.error$.subscribe(error => this.error = error);
   }

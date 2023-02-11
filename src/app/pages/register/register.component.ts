@@ -34,49 +34,27 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  get getEmail() {
-    return this.form.get('email')
-  }
-
-  get getPass() {
-    return this.form.get('password')
-  }
-
-  get getFname() {
-    return this.form.get('first_name')
-  }
-
-  get getLname() {
-    return this.form.get('last_name')
-  }
-
   register() {
-    if (this.getEmail?.errors?.['pattern']) {
-      var temp = document.getElementById("emailError")
+    if (this.form.invalid) {
+      return;
     }
-    else if (this.getPass?.errors?.['minlength']) {
-      var temp = document.getElementById("passError")
-    }
-    else {
-      console.log(this.form.value);
-      this.store.dispatch(sendRegisterForm({user: this.form.value}));
-      setTimeout(() => {
-        if (this.error) {
-          this.dialog.open(
-            DialogComponent, {
-              data: {
-                title: 'Error al registrarse',
-                message: this.error.error.error,
-                confirmText: 'Aceptar',
-                cancelText: 'Cerrar'
-              }
+    this.store.dispatch(sendRegisterForm({user: this.form.value}));
+    setTimeout(() => {
+      if (this.error) {
+        this.dialog.open(
+          DialogComponent, {
+            data: {
+              title: 'Error al registrarse',
+              message: this.error.error.error,
+              confirmText: 'Aceptar',
+              cancelText: 'Cerrar'
             }
-          )
-          return;
-        }
-        this.router.navigateByUrl('/login');
-      }, 1000);
-    }
+          }
+        )
+        return;
+      }
+      this.router.navigateByUrl('/login');
+    }, 1000);
 
   }
 
