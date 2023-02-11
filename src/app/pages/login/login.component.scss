@@ -1,7 +1,19 @@
-.loginCSS {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    background-color: gray;
+.purple-text {
+    color: #9C27B0;
+}
+
+.logo-bg {
+    // background-color: #f3f4f8;
+    background-color: #000137;
+}
+
+.relative-position {
+    position: relative;
+}
+
+img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

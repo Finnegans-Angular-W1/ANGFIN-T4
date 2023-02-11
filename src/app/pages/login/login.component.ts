@@ -40,33 +40,26 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    if (this.getEmail?.errors?.['pattern']){
-      var temp= document.getElementById("emailError")
+    if ( this.form.invalid ) {
+      return;
     }
-    else if(this.getPass?.errors?.['minLength']){
-      var temp= document.getElementById("passError")
-    }
-    else{
-      this.store.dispatch(sendLoginForm({user: this.form.value}));
-      setTimeout(() => {
-        if (this.error) {
-          this.dialog.open(
-            DialogComponent, {
-              data: {
-                title: 'Error al iniciar sesión',
-                message: 'Email y/o contraseña incorrecto',
-                confirmText: 'Aceptar',
-                cancelText: 'Cerrar'
-              }
+    this.store.dispatch(sendLoginForm({user: this.form.value}));
+    setTimeout(() => {
+      if (this.error) {
+        this.dialog.open(
+          DialogComponent, {
+            data: {
+              title: 'Error al iniciar sesión',
+              message: 'Email y/o contraseña incorrecto',
+              confirmText: 'Aceptar',
+              cancelText: 'Cerrar'
             }
-          )
-          return;
-        }
-        this.router.navigateByUrl('/home');
-      }, 1000);
-    }
-
-    //Aca quedaria validar si ya esta registrado el email
+          }
+        )
+        return;
+      }
+      this.router.navigateByUrl('/home');
+    }, 1000);
   }
 
 

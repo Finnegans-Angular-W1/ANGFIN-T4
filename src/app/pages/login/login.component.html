@@ -1,32 +1,42 @@
-<div class="loginCSS">
-    <div>
-        <form [formGroup]="form" (ngSubmit)="Login()">
-            <mat-form-field class="campo" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput autocomplete="off" formControlName="email" class="form-control" required>
-            </mat-form-field>
-            <div id="emailError" *ngIf="(getEmail?.invalid && getEmail?.touched) || getEmail?.dirty">
-                <small *ngIf="getEmail?.errors?.['pattern']" class="text-danger">Por favor ingrese una direccion de
-                    e-mail correcta</small>
+<div class="container-fluid overflow-hidden">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-12 col-sm-12 col-lg-6 col-12">
+            <div class="mx-auto w-75">
+                <p class="fw-normal fs-1 text-center">¡Bienvenido de vuelta!</p>
+                <p class="fw-light mt-5 fs-6 text-center">Bienvenido, por favor ingrese sus credenciales.</p>
+                <form [formGroup]="form" (ngSubmit)="Login()">
+                    <div class="mb-3 mt-5">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput autocomplete="off" formControlName="email">
+                            <mat-error class="text-center">
+                                Por favor ingrese una direccion de e-mail correcta
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                            <input type="password" matInput autocomplete="off" formControlName="password">
+                            <mat-error class="text-center">
+                                Por favor ingrese una contraseña de 6 caracteres minimo
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <p class="purple-text text-end mb-3">
+                        <a class="purple-text text-decoration-none fw-bold" routerLink="/">Olvide mi contraseña</a>
+                    </p>
+                    <div class="d-grid gap-2 mb-3">
+                        <button mat-raised-button color="primary" class="p-2">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                    <p class="text-center mt-4 fw-light">¿No tienes una cuenta? <a class="text-decoration-none purple-text fw-bold" routerLink="/register">Registrate</a></p>
+                </form>
             </div>
-            <br>
-            <mat-form-field class="campo" appearance="fill">
-                <mat-label>Contraseña</mat-label>
-                <input type="password" matInput autocomplete="off" formControlName="password" class="form-control"
-                    required>
-            </mat-form-field>
-            <div id="passError" *ngIf="(getPass?.invalid && getPass?.touched) || getPass?.dirty">
-                <small *ngIf="getPass?.errors?.['minlength']" class="text-danger">Por favor ingrese una contraseña de 6 caracteres minimo</small>
-            </div>
-            <br>
-            <p>¿Olvidaste tu contraseña?, hace click <a href="/">AQUI</a></p>
-            <br>
-            <button mat-raised-button color="primary" type="submit" class="campo button" [disabled]="form.invalid">Login</button>
-            <br>
-            <br>
-            <p>¿No tenes una cuenta? <a routerLink="/register">Registrate</a></p>
-        </form>
-
+        </div>
+        <div class="col-6 logo-bg h-100 d-none d-lg-block text-center relative-position">
+            <img src="/assets/logo-nobackground.png" class="img-fluid padding-top" alt="logo">
+        </div>
     </div>
-
 </div>
