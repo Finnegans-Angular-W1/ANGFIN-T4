@@ -29,6 +29,7 @@ import {MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 
@@ -44,6 +45,7 @@ import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
+import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 
 
@@ -59,6 +61,7 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     EnviodedineroComponent,
     FooterComponent,
     TipoDeCambioComponent,
+    PasswordResetComponent,
     TransactionsListComponent,
 
   ],
@@ -77,6 +80,7 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
     HttpClientModule,
+    MatIconModule,
     MatListModule,
     MatFormFieldModule,
     FormsModule
