@@ -36,6 +36,7 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 
 
@@ -73,6 +74,9 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
     }
   ],
   bootstrap: [AppComponent]
