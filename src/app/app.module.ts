@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
+import {MatListModule} from '@angular/material/list';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './Componentes/home/home.component';
@@ -17,14 +18,19 @@ import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 
 //Components
+
+import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+
 
 //Material
 import {MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -41,19 +47,20 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     E404Component,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
     DivisasComponent,
-    RegisterComponent,
-    FooterComponent
     EnviodedineroComponent,
     FooterComponent,
-    HomeComponent,
     TipoDeCambioComponent,
+    TransactionsListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,7 +76,11 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    MatFormFieldModule,
+    FormsModule
+    
   ],
   providers: [
     {
