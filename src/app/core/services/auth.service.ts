@@ -17,7 +17,9 @@ export class AuthService {
 
   private url = 'http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com'
 
-  constructor(private http: HttpClient, private router: Router, private store: Store<AppState>) { }
+  userId$ = this.store.select(selectToken);
+
+  constructor( private http: HttpClient, private router: Router, private store: Store<AppState> ) { }
 
   login(user: User): Observable<string> {
     return this.http.post(`${this.url}/auth/login`, user).pipe(
