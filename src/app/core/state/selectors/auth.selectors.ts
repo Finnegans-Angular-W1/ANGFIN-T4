@@ -24,3 +24,8 @@ export const selectUser = createSelector(
     selectAuthFeatures,
     (state: AuthState) => state.user
 );
+
+export const selectUserId = createSelector(
+    selectAuthFeatures,
+    (state: AuthState) => state.user.id
+);
