@@ -6,4 +6,5 @@ export interface User {
     password: string,
     roleId?: number,
     points?: number
+    id?: number
 }
