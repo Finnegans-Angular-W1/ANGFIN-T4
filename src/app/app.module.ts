@@ -10,7 +10,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { HomeComponent } from './Componentes/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { E404Component } from './e404/e404.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -33,17 +33,19 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
-import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
-import { FooterComponent } from './Componentes/footer/footer.component';
-import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DivisasComponent } from './components/divisas/divisas.component';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
+import { Error404Component } from './components/error404/error404.component';
+import { ShellComponent } from './components/shell/shell.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    E404Component,
+    Error404Component,
     LoginComponent,
     RegisterComponent,
     EnviodedineroComponent,
@@ -51,6 +53,7 @@ import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.compon
     DivisasComponent,
     HomeComponent,
     TipoDeCambioComponent,
+    ShellComponent,
   ],
   imports: [
     BrowserModule,
