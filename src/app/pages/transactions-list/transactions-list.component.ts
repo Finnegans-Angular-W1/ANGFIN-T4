@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
-import {selectUserId} from '../../core/state/selectors/auth.selectors'
+import { selectUser } from '../../core/state/selectors/auth.selectors';
 
 @Component({
   selector: 'app-transactions-list',
@@ -16,13 +16,13 @@ export class TransactionsListComponent implements OnInit {
   }
 
   transactions: any[] = [];
-  userId: number = 0;
+  userId: any = 0;
 
   ngOnInit() {
     
-    this.store.select(selectUserId)
-      .subscribe(userId => {
-        this.userId = userId;
+    this.store.select(selectUser)
+      .subscribe(user => {
+        this.userId = user.id;
         this.getTransactions();
       });
   }
