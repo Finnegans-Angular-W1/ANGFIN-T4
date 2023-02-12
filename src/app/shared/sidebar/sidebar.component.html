@@ -19,8 +19,9 @@
       <button (click)="logout()" mat-button color="accent">Log Out</button>
     </mat-sidenav>
     <mat-sidenav-content>
-
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
-<router-outlet></router-outlet>
