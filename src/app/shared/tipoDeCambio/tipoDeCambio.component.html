@@ -1,4 +1,9 @@
-<div>
-  <p>1 {{ baseCurrency }} = {{ exchangeRate }} {{ targetCurrency }}</p>
-  <p>1 {{ targetCurrency }} = {{ 1 / exchangeRate }} {{ baseCurrency }}</p>
-</div>
+
+  <div class="card">
+    <img src="" class="card-img-top" alt="">
+    <div class="card-body">
+      <h2 class="card-title">Tipo de cambio</h2>
+      <p class="card-text">Valor Dolar hoy VENTA: <span>{{ valorVenta|| 189.98 | currency:'US$'}}</span></p>
+      <p class="card-text">Valor Dolar hoy COMPRA: <span>{{ valorCompra|| 198.98 | currency:'US$'}}</span></p>
+    </div>
+       

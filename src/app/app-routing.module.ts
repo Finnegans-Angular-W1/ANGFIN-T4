@@ -8,6 +8,8 @@ import { CurrencyConverterComponent } from './shared/currency-converter/currency
 import { TransactionsFormComponent } from './shared/transactions-form/transactions-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
