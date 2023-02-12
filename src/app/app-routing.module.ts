@@ -12,6 +12,7 @@ import { ShellComponent } from './components/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: '',
     component: ShellComponent,
@@ -24,7 +25,6 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {path:'**', component: E404Component}
 ];
 
