@@ -17,8 +17,11 @@ import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 
 //Components
+
+import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+
 
 //Material
 import {MatCardModule } from '@angular/material/card';
@@ -26,6 +29,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 
 
 import { StoreModule } from '@ngrx/store';
@@ -36,8 +43,11 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './Componentes/enviodedinero/enviodedinero.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
+import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
+
 
 
 
@@ -47,12 +57,15 @@ import { ProfileComponent } from './pages/profile/profile.component';
     E404Component,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
+    DivisasComponent,
     EnviodedineroComponent,
     FooterComponent,
-    DivisasComponent,
-    HomeComponent,
     TipoDeCambioComponent,
     ProfileComponent,
+    PasswordResetComponent,
+    TransactionsListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,11 +82,19 @@ import { ProfileComponent } from './pages/profile/profile.component';
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
     HttpClientModule, 
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatListModule,
+    MatFormFieldModule,
+    FormsModule
+    
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
     }
   ],
   bootstrap: [AppComponent]

@@ -9,14 +9,17 @@ import { TransactionsFormComponent } from './shared/transactions-form/transactio
 import { HomeComponent } from './Componentes/home/home.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: PasswordResetComponent, canActivate: [AuthGuard] },
   { path: 'transactions-form', component: TransactionsFormComponent },
   { path: 'currency-converter', component: CurrencyConverterComponent },
-  {path:'**', component: E404Component}
+  {path:'**', component: E404Component},
+  {path:'password-reset', component: PasswordResetComponent}
 ];
 
 @NgModule({
