@@ -45,6 +45,7 @@ import { FooterComponent } from './Componentes/footer/footer.component';
 import { DivisasComponent } from './Componentes/divisas/divisas.component';
 import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 
@@ -61,6 +62,7 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
     EnviodedineroComponent,
     FooterComponent,
     TipoDeCambioComponent,
+    ProfileComponent,
     PasswordResetComponent,
     TransactionsListComponent,
 
@@ -79,9 +81,9 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([AuthEffects]),
-    HttpClientModule,
-    MatIconModule,
+    HttpClientModule, 
     MatListModule,
+    MatIconModule,
     MatFormFieldModule,
     FormsModule
     
