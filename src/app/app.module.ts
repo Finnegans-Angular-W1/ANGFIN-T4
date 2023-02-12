@@ -94,9 +94,9 @@ import { ShellComponent } from './components/shell/shell.component';
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })
