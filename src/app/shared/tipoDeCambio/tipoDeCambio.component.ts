@@ -7,21 +7,26 @@ import { CurrencyService } from 'src/app/core/services/currency.service';
   styleUrls: ['./tipoDeCambio.component.css']
 })
 export class TipoDeCambioComponent implements OnInit {
-  baseCurrency = "USD";
-  targetCurrency = "ARG";
-  exchangeRate! : number;
-  
+public valorCompra: string = "";
+public valorVenta: string = "";
+
 
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {
-    // this.currencyService.getExchangeRate(this.baseCurrency, this.targetCurrency)
-    // .subscribe((rates : any) => {
-      
-    //   this.exchangeRate = rates;
-    // } )
+    this.getValores()
+     } 
+     getValores(){
+      this.currencyService.getExchangeRate().subscribe(
+        (        res: { casa: {
+          compra: string; venta: string; 
+}; }[]) =>{
+          this.valorCompra = res[0].casa.compra;
+          this.valorVenta = res[0].casa.venta;
+        }
+      )
+     }
     
   }
 
-}
 
