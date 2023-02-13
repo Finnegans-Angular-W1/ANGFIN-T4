@@ -17,26 +17,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { InvestmentCalcComponent } from './investment-calc/investment-calc.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
-
-
-
-const routes: Routes = [
-  // { path: 'home', component: Home },
-  // { path: 'ingresos', component: Ingresos },
-  // { path: 'egresos', component: Egresos },
-  // { path: 'enviarDinero', component: EnviarDinero },
-  // { path: 'plazosFijos', component: PlazosFijos },
-  // { path: 'contactos', component: Contactos },
-  // { path: 'perfil', component: Perfil },
-  // { path: 'billeteras', component:  Billeteras},
-];
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -55,8 +42,8 @@ const routes: Routes = [
     TitulosComponent
   ],
   imports: [
+    AppRoutingModule,
     CommonModule,
-    RouterModule.forRoot(routes),
     MatSlideToggleModule,
     MatSidenavModule,
     MatToolbarModule,

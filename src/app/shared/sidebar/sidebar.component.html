@@ -6,7 +6,7 @@
 
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav>
-      <mat-nav-list>
+      <mat-nav-list class="px-5">
         <a mat-list-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
         <a mat-list-item routerLink="/ingresos" routerLinkActive="active" ariaCurrentWhenActive="page">Ingresos</a>
         <a mat-list-item routerLink="/egresos" routerLinkActive="active" ariaCurrentWhenActive="page">Egresos</a>
@@ -19,16 +19,9 @@
       <button (click)="logout()" mat-button color="accent">Log Out</button>
     </mat-sidenav>
     <mat-sidenav-content>
-
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
-
-
-
-
-<!-- The routed views render in the <router-outlet>-->
-  
-<router-outlet></router-outlet>
-
-
