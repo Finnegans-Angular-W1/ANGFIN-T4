@@ -14,12 +14,13 @@ export class HomeComponent implements OnInit {
 
   user: Observable<User>;
 
-  constructor( private store: Store<AppState> ) {
+  constructor(private store: Store<AppState>) {
     this.user = this.store.select(selectUser);
 
     this.user.subscribe(user => console.log(user));
   }
   ngOnInit(): void {
   }
+
 
 }

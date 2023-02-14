@@ -53,6 +53,7 @@ import { ShellComponent } from './components/shell/shell.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+
   ],
   imports: [
     BrowserModule,
