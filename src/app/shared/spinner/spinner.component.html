@@ -1,3 +1,7 @@
-<div *ngIf="this.loader.getLoading()" class="cssload-container">
-    <div class="cssload-speeding-wheel"></div>
+<div class="container">
+    <div *ngIf="isLoading" class="row">
+        <div class="col mt-5">
+            <mat-spinner class="mx-auto"></mat-spinner>
+        </div>
+    </div>
 </div>

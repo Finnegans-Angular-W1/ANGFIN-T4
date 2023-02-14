@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import {MatListModule} from '@angular/material/list';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -91,9 +90,6 @@ import { ShellComponent } from './components/shell/shell.component';
     
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
-    },
     {
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
     }
