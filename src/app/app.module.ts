@@ -42,7 +42,7 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
-import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
@@ -91,7 +91,7 @@ import { ShellComponent } from './components/shell/shell.component';
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }
   ],
   bootstrap: [AppComponent]
