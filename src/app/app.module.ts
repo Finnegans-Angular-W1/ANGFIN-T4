@@ -31,7 +31,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -87,8 +87,8 @@ import { ShellComponent } from './components/shell/shell.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
-    
+    FormsModule,
+    MatGridListModule
   ],
   providers: [
     {
