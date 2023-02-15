@@ -1,1 +1,9 @@
-<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+<h1 mat-dialog-title class="text-center">{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p class="text-center">{{ data.message }}</p>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-button (click)="confirm()" cdkFocusInitial>
+    Aceptar
+  </button>
+</div>

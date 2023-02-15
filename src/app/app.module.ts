@@ -49,6 +49,7 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -86,8 +87,8 @@ import { ShellComponent } from './components/shell/shell.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
-    
+    FormsModule,
+    CommonModule,
   ],
   providers: [
     {
