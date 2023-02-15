@@ -12,6 +12,11 @@ footer {
     a{
         text-decoration: none;
         color: #ffffff;
+        
+    }
+
+    li{
+        list-style: none;
     }
 
     mat-grid-list{
@@ -19,6 +24,7 @@ footer {
     }
 
     mat-icon{
+        margin-top: 0.5rem;
         margin-right: 0.3rem;
     }
   }

@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: 'sidebar', component: SidebarComponent },
-      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'home', component: ProfileComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
     ]
