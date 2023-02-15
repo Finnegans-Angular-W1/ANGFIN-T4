@@ -1,9 +1,10 @@
 import { LoginComponent } from './login.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Store, StoreModule } from '@ngrx/store';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -12,9 +13,15 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        StoreModule.forRoot({}),
+        MatDialogModule
       ],
-      declarations: [ LoginComponent ]
+      declarations: [ 
+        LoginComponent 
+      ],
+      providers:[
+      ]
     })
     .compileComponents();
 
@@ -25,31 +32,50 @@ describe('LoginComponent', () => {
 
 
   //Primera prueba, espera que el componente exista
-    it('should create', () => {
+    it('Should create', () => {
       expect(component).toBeTruthy();
     });
 
-  //Segunda prueba, verifica que los campos requeridos esten correctos
-    it('should validate required fields', () => {
-      component.form.controls['username'].setValue('');
-      component.form.controls['password'].setValue('');
-      fixture.detectChanges();
-
-      const username = component.form.get('username');
-      const password = component.form.get('password');
-      expect(username).toBeTruthy();
-      expect(password).toBeTruthy();
+  //Segunda prueba, verifica que los campos requeridos
+    it('Should check if fields are required', () => {
+      const username = component.form.controls['email'];
+      const password = component.form.controls['password'];
+      username.setValue('');
+      password.setValue('');
+      expect(username.valid).toBeFalsy();
+      expect(password.valid).toBeFalsy();
     });
 
+  //Tercera prueba, verifica un caso correcto
+    it('Should check if form is valid', () => {
+      const username = component.form.controls['email'];
+      const password = component.form.controls['password'];
+      username.setValue('juanperez9999@example.com');
+      password.setValue('abc1234');
+      expect(component.form.valid).toBeTruthy();
+    });
   
-  // it('should display error messages if fields are invalid', () => {
-  //   component.form.controls['username'].setValue('');
-  //   component.form.controls['password'].setValue('');
-  //   fixture.detectChanges();
+  //Cuarta prueba, verifica un caso donde falta el campo de contraseña
+  it('Should check if form is invalid because password', () => {
+    const username = component.form.controls['email'];
+    const password = component.form.controls['password'];
+    username.setValue('juanperez9999@example.com');
+    password.setValue('');
+    expect(component.form.valid).toBeFalsy();
+  });
 
-  //   const username = fixture.debugElement.query(By.css('#username')).nativeElement;
-  //   const password = fixture.debugElement.query(By.css('#password')).nativeElement;
-  //   expect(username.getAttribute);
-  // });
+  //Quinta prueba, verifica un caso donde falta el campo de usuario
+  it('Should check if form is invalid because email', () => {
+    const username = component.form.controls['email'];
+    const password = component.form.controls['password'];
+    username.setValue('');
+    password.setValue('abc1234');
+    expect(component.form.valid).toBeFalsy();
+  });
 
 });
+
+function provideMockStore(arg0: {}): any {
+  throw new Error('Function not implemented.');
+}
+
