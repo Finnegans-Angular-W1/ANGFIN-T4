@@ -49,7 +49,7 @@ describe('LoginComponent', () => {
       const username = component.form.controls['email'];
       const password = component.form.controls['password'];
       username.setValue('juanperez9999@example.com');
-      password.setValue('abc1234');
+      password.setValue('abc123');
       expect(component.form.valid).toBeTruthy();
     });
   
