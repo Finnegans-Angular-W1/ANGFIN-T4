@@ -50,6 +50,7 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -68,6 +69,7 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ import { ShellComponent } from './components/shell/shell.component';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
