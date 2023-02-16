@@ -50,6 +50,7 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { RecuperoContraseniaComponent } from './components/recupero-contrasenia/recupero-contrasenia.component';
 
 
 
@@ -68,6 +69,7 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    RecuperoContraseniaComponent,
   ],
   imports: [
     BrowserModule,
