@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
 import { sendLoginForm } from '../../core/state/actions/auth.actions';
 import { Router } from '@angular/router';
-import { selectAuthError, selectToken } from '../../core/state/selectors/auth.selectors';
+import { selectAuthError, selectAuthLoading } from '../../core/state/selectors/auth.selectors';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   error$ = this.store.select(selectAuthError);
   error: any = null;
+  loading$ = this.store.select(selectAuthLoading);
 
   constructor(private fb:FormBuilder, private store: Store<AppState>, private router: Router, private dialog: MatDialog){
     this.form = this.fb.group({
