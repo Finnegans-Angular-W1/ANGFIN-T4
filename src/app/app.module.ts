@@ -41,7 +41,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
 import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
@@ -62,7 +61,6 @@ import { ShellComponent } from './components/shell/shell.component';
     HomeComponent,
     DivisasComponent,
     EnviodedineroComponent,
-    FooterComponent,
     TipoDeCambioComponent,
     ProfileComponent,
     PasswordResetComponent,
@@ -87,8 +85,7 @@ import { ShellComponent } from './components/shell/shell.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
-    
+    FormsModule,
   ],
   providers: [
     {

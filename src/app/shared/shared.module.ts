@@ -24,6 +24,8 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ExpenseEditorComponent } from './expense-editor/expense-editor.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,15 @@ import { AppRoutingModule } from '../app-routing.module';
     TransactionsFormComponent,
     CurrencyConverterComponent,
     InvestmentCalcComponent,
-
+    ExpenseEditorComponent,
+    FooterComponent
   ],
   exports: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent
+    TitulosComponent,
+    ExpenseEditorComponent,
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -58,7 +63,6 @@ import { AppRoutingModule } from '../app-routing.module';
     MatFormFieldModule,
     FormsModule,
     MatDatepickerModule
-
   ]
 })
 export class SharedModule { }
