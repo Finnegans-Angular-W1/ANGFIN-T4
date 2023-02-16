@@ -62,7 +62,7 @@ import { FooterComponent } from './footer/footer.component';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
   ]
 })
 export class SharedModule { }
