@@ -1,10 +1,8 @@
 import { LoginComponent } from './login.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Store, StoreModule } from '@ngrx/store';
-import { of } from 'rxjs';
-import { By } from '@angular/platform-browser';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
