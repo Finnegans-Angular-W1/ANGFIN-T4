@@ -50,6 +50,8 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
+import { ExpensesService } from './core/services/expenses.service';
 
 
 
@@ -68,6 +70,8 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    BalanceLoadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -87,10 +91,11 @@ import { ShellComponent } from './components/shell/shell.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
     
   ],
   providers: [
+    ExpensesService,
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
     },

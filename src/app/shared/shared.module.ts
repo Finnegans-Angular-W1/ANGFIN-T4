@@ -39,7 +39,8 @@ import { AppRoutingModule } from '../app-routing.module';
   exports: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent
+    TitulosComponent,
+    TransactionsFormComponent
   ],
   imports: [
     AppRoutingModule,
