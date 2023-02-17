@@ -7,12 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-<<<<<<< HEAD
 import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import { MatListModule } from '@angular/material/list';
-=======
-import {MatListModule} from '@angular/material/list';
->>>>>>> d38087e7a36e351f0afcdc5a420fe11afd595453
+
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './components/home/home.component';
@@ -58,6 +55,10 @@ import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { jwtInterceptor } from './core/interceptors/http.interceptor';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -77,6 +78,8 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     TransactionsListComponent,
     ShellComponent,
     OperationsComponent
+    TwWidgetComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
@@ -99,18 +103,18 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     FormsModule,
     MatTableModule,
     MatSortModule
+    CommonModule,
 
   ],
   providers: [
     {
-<<<<<<< HEAD
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
     {
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
-=======
+
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
->>>>>>> d38087e7a36e351f0afcdc5a420fe11afd595453
+
     }
   ],
   bootstrap: [AppComponent]

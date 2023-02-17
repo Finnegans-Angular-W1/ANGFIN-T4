@@ -15,6 +15,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
+import { AlertComponent } from './shared/alerts/alert.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,7 +31,6 @@ const routes: Routes = [
       //{ path: 'operations', component: OperationsComponent },
     ]
   },
-  { path: 'spinner', component: SpinnerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path:'**', component: E404Component}
