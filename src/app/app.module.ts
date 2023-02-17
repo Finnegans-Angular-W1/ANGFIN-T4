@@ -49,6 +49,8 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+
 
 
 
@@ -67,6 +69,7 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    TwWidgetComponent,
   ],
   imports: [
     BrowserModule,
