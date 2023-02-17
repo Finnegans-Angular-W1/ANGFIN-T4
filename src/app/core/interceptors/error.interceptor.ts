@@ -5,7 +5,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ErrorInterceptorService implements HttpInterceptor{
+export class ErrorInterceptor implements HttpInterceptor{
 
   constructor() { }
 
@@ -18,6 +18,6 @@ export class ErrorInterceptorService implements HttpInterceptor{
 
   catchederror(error: HttpErrorResponse){
     console.log('Error catched');
-    return throwError('Mensaje de error');
+    return throwError(error);
   }
 }

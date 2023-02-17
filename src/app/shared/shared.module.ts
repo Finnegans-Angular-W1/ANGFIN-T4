@@ -20,6 +20,7 @@ import { InvestmentCalcComponent } from './investment-calc/investment-calc.compo
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
@@ -63,7 +64,8 @@ import { FooterComponent } from './footer/footer.component';
     MatFormFieldModule,
     FormsModule,
     MatDatepickerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class SharedModule { }
