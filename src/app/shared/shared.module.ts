@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     FormsModule,
     MatDatepickerModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
 
   ]
 })

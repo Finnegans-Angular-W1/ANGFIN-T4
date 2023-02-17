@@ -32,6 +32,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -92,7 +93,8 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
 
   ],
   providers: [

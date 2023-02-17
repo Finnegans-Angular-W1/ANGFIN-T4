@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { Transaction } from 'src/app/core/interfaces/transaction';
 
@@ -10,18 +12,24 @@ import { Transaction } from 'src/app/core/interfaces/transaction';
 export class OperationsComponent implements OnInit {
 
   @Input() transactions$!: Observable<Transaction[]>;
+
   dataSource!: Transaction[];
-  displayedColumns: string[] = ['date', 'accountId', 'amount', 'concept'];
+
+  displayedColumns: string[] = ['amount', 'date', 'accountId', 'concept'];
+
   
   constructor() { }
 
   ngOnInit(): void {
 
     this.transactions$.subscribe(transactions=> {
-      this.dataSource=transactions;
+      this.dataSource = transactions;
       console.log(transactions)
     }  )
 
   }
+
+
+  
 
 }
