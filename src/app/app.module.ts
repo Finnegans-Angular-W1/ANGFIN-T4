@@ -49,8 +49,8 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
-
 import { CommonModule } from '@angular/common';
 
 
@@ -79,6 +79,7 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
