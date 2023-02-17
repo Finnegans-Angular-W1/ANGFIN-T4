@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TransactionsFormComponent } from './transactions-form.component';
 
@@ -8,6 +9,9 @@ describe('TransactionsFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule,
+      ],
       declarations: [ TransactionsFormComponent ]
     })
     .compileComponents();

@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TipoDeCambioComponent } from './tipoDeCambio.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { StoreModule } from '@ngrx/store';
 
 describe('TipoDeCambioComponent', () => {
   let component: TipoDeCambioComponent;
@@ -11,6 +13,7 @@ describe('TipoDeCambioComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule, StoreModule.forRoot({}, {}), ],
       declarations: [ TipoDeCambioComponent ]
     })
     .compileComponents();

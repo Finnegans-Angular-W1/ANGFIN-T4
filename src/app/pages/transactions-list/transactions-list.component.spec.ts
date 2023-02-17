@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { TransactionsListComponent } from './transactions-list.component';
 
@@ -8,9 +11,13 @@ describe('TransactionsListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TransactionsListComponent ]
+      imports: [HttpClientTestingModule,
+                FormsModule,
+                ReactiveFormsModule,
+                StoreModule.forRoot({}, {}),],
+      declarations: [TransactionsListComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TransactionsListComponent);
     component = fixture.componentInstance;
