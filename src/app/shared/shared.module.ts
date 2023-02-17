@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { InvestmentCalcComponent } from './investment-calc/investment-calc.component';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -58,8 +59,8 @@ import { AppRoutingModule } from '../app-routing.module';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    MatDatepickerModule
-
+    MatDatepickerModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class SharedModule { }

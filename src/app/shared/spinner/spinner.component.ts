@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
-import { LoaderService } from '../../core/services/loader.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
-export class SpinnerComponent {
-  constructor(public loader: LoaderService) { }
+export class SpinnerComponent implements OnInit {
+
+  @Input() isLoading: boolean | null = true;
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  
 }
