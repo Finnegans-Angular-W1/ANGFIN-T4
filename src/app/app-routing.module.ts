@@ -12,6 +12,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { OperationsComponent } from './components/operations/operations.component';
+import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,9 +22,10 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: 'sidebar', component: SidebarComponent },
-      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'home', component: TransactionsListComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
+      //{ path: 'operations', component: OperationsComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

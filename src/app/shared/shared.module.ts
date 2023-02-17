@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
 
@@ -24,12 +24,14 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent,  
+    TitulosComponent,
     DialogComponent,
     TransactionsFormComponent,
     CurrencyConverterComponent,
@@ -57,7 +59,8 @@ import { AppRoutingModule } from '../app-routing.module';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTableModule
 
   ]
 })
