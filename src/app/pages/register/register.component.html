@@ -1,6 +1,6 @@
 <div class="container-fluid overflow-hidden">
     <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-md-12 col-sm-12 col-lg-6 col-12">
+        <div *ngIf="!(loading$ | async)" class="col-md-12 col-sm-12 col-lg-6 col-12">
             <div class="mx-auto w-75">
                 <p class="fw-normal fs-1 text-center">Bienvenido</p>
                 <p class="fw-light mt-5 fs-6 text-center">Bienvenido, por favor ingrese sus credenciales.</p>
@@ -48,6 +48,9 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div *ngIf="(loading$ | async)" class="col-md-12 col-sm-12 col-lg-6 col-12">
+            <app-spinner [isLoading]="(loading$ | async)"></app-spinner>
         </div>
         <div class="col-6 logo-bg h-100 d-none d-lg-block text-center relative-position">
             <img src="/assets/logo-nobackground.png" class="img-fluid padding-top" alt="logo">
