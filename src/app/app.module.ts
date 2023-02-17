@@ -51,6 +51,7 @@ import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 
+import { CommonModule } from '@angular/common';
 
 
 
@@ -89,8 +90,8 @@ import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
-    
+    FormsModule,
+    CommonModule,
   ],
   providers: [
     {
