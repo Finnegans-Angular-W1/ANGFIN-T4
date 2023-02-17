@@ -5,7 +5,7 @@ import { AppState } from '../app.state';
 
 export const selectAuthFeatures = (state: AppState) => state.auth;
 
-export const selectLoading = createSelector(
+export const selectAuthLoading = createSelector(
     selectAuthFeatures,
     (state: AuthState) => state.loading
 );

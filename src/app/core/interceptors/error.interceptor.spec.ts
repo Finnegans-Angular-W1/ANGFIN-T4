@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoaderService } from './loader.service';
+import { ErrorInterceptor } from './error.interceptor';
 
-describe('LoaderService', () => {
-  let service: LoaderService;
+describe('ErrorInterceptor', () => {
+  let service: ErrorInterceptor;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoaderService);
+    service = TestBed.inject(ErrorInterceptor);
   });
 
   it('should be created', () => {

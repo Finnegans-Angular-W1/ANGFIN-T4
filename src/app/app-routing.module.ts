@@ -12,6 +12,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { AlertComponent } from './shared/alerts/alert.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
