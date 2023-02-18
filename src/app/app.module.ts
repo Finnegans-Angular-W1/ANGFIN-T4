@@ -52,6 +52,8 @@ import { ShellComponent } from './components/shell/shell.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 import { CommonModule } from '@angular/common';
+import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
+import { ExpensesService } from './core/services/expenses.service';
 
 
 
@@ -71,6 +73,8 @@ import { CommonModule } from '@angular/common';
     TransactionsListComponent,
     ShellComponent,
     TwWidgetComponent,
+    BalanceLoadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -93,8 +97,11 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     FormsModule,
     CommonModule,
+    FormsModule,
+    
   ],
   providers: [
+    ExpensesService,
     {
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }
