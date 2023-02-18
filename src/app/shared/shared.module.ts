@@ -29,6 +29,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { AlertComponent } from './alerts/alert.component';
+import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AlertComponent } from './alerts/alert.component';
     InvestmentCalcComponent,
     AlertComponent,
     ExpenseEditorComponent,
-    FooterComponent
+    FooterComponent,
+    TwWidgetComponent
   ],
   exports: [
     SidebarComponent,

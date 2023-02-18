@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import { MatListModule } from '@angular/material/list';
 
 
@@ -44,17 +42,15 @@ import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
-import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { jwtInterceptor } from './core/interceptors/http.interceptor';
 import { MatDialogModule } from '@angular/material/dialog';
-import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
@@ -76,8 +72,7 @@ import { ExpensesService } from './core/services/expenses.service';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
-    OperationsComponent
-    TwWidgetComponent,
+    OperationsComponent,
     BalanceLoadComponent,
 
   ],
@@ -104,7 +99,7 @@ import { ExpensesService } from './core/services/expenses.service';
     MatTableModule,
     MatSortModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
     CommonModule,
     FormsModule,
 
@@ -114,12 +109,6 @@ import { ExpensesService } from './core/services/expenses.service';
     {
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
-
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
-
-    }
   ],
   bootstrap: [AppComponent]
 })
