@@ -30,7 +30,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -96,9 +96,9 @@ import { ExpensesService } from './core/services/expenses.service';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
+    MatGridListModule
     CommonModule,
     FormsModule,
-    
   ],
   providers: [
     ExpensesService,
