@@ -4,7 +4,7 @@
             <div class="mx-auto w-75">
                 <p class="fw-normal fs-1 text-center">Bienvenido</p>
                 <p class="fw-light mt-5 fs-6 text-center">Bienvenido, por favor ingrese sus credenciales.</p>
-                <form [formGroup]="form" (ngSubmit)="register()">
+                <form [formGroup]="form" (ngSubmit)="register()" id="registerForm">
                     <div class="mb-3 mt-5">
                         <mat-form-field class="w-100" appearance="outline">
                             <mat-label>Nombre</mat-label>

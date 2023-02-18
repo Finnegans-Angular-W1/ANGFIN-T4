@@ -6,7 +6,7 @@ import { selectAuthError, selectAuthLoading } from '../../core/state/selectors/a
 import { sendRegisterForm } from '../../core/state/actions/auth.actions';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { AlertComponent } from '../../shared/alerts/alert.component';
 
 @Component({
   selector: 'app-register',
@@ -41,12 +41,10 @@ export class RegisterComponent implements OnInit {
     setTimeout(() => {
       if (this.error) {
         this.dialog.open(
-          DialogComponent, {
+          AlertComponent, {
             data: {
               title: 'Error al registrarse',
               message: this.error.error.error,
-              confirmText: 'Aceptar',
-              cancelText: 'Cerrar'
             }
           }
         )

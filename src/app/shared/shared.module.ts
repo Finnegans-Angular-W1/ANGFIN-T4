@@ -25,6 +25,7 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AlertComponent } from './alerts/alert.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,13 @@ import { AppRoutingModule } from '../app-routing.module';
     TransactionsFormComponent,
     CurrencyConverterComponent,
     InvestmentCalcComponent,
-
+    AlertComponent
   ],
   exports: [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    AlertComponent,
     TransactionsFormComponent
   ],
   imports: [

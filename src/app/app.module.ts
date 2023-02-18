@@ -49,6 +49,9 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
 
@@ -69,6 +72,7 @@ import { ExpensesService } from './core/services/expenses.service';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    TwWidgetComponent,
     BalanceLoadComponent,
     
   ],
@@ -79,6 +83,7 @@ import { ExpensesService } from './core/services/expenses.service';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
@@ -90,6 +95,8 @@ import { ExpensesService } from './core/services/expenses.service';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
+    FormsModule,
+    CommonModule,
     FormsModule,
     
   ],
