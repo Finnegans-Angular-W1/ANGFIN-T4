@@ -40,7 +40,6 @@ import { FooterComponent } from './footer/footer.component';
     InvestmentCalcComponent,
     ExpenseEditorComponent,
     FooterComponent,
-    MapComponent
   ],
   exports: [
     SidebarComponent,
@@ -48,7 +47,6 @@ import { FooterComponent } from './footer/footer.component';
     TitulosComponent,
     ExpenseEditorComponent,
     FooterComponent,
-    MapComponent,
   ],
   imports: [
     AppRoutingModule,
