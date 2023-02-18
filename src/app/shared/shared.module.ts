@@ -46,6 +46,7 @@ import { AlertComponent } from './alerts/alert.component';
     SpinnerComponent,
     TitulosComponent,
     AlertComponent,
+    TransactionsFormComponent
   ],
   imports: [
     AppRoutingModule,

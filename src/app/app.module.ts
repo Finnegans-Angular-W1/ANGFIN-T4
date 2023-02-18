@@ -58,6 +58,8 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 import { CommonModule } from '@angular/common';
+import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
+import { ExpensesService } from './core/services/expenses.service';
 
 
 
@@ -79,6 +81,7 @@ import { CommonModule } from '@angular/common';
     ShellComponent,
     OperationsComponent
     TwWidgetComponent,
+    BalanceLoadComponent,
 
   ],
   imports: [
@@ -104,9 +107,11 @@ import { CommonModule } from '@angular/common';
     MatTableModule,
     MatSortModule
     CommonModule,
+    FormsModule,
 
   ],
   providers: [
+    ExpensesService,
     {
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
