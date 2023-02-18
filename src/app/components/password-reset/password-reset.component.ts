@@ -5,6 +5,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 // import custom validator to validate that password and confirm password fields match
 import { MustMatch } from './_helpers';
 import { AuthService } from '../../core/services/auth.service';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/core/state/app.state';
+import { logout } from 'src/app/core/state/actions/auth.actions';
 
 @Component({
   selector: 'app-password-reset',
@@ -15,7 +19,9 @@ export class PasswordResetComponent {
   hide = true;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private store: Store<AppState>) {
+
+  }
 
   resetPasswordForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -31,9 +37,10 @@ export class PasswordResetComponent {
     if (this.resetPasswordForm.invalid) {
       return;
     }
-    this.auth.resetPassword(this.resetPasswordForm.value.password).subscribe(resp => 
-      console.log(resp)
-      // Debería redireccionar
-      )
+    this.auth.resetPassword(this.resetPasswordForm.value.password).subscribe(resp => {
+      this.store.dispatch(logout());
+      this.router.navigateByUrl('/login');
+    }
+    )
   }
 }
