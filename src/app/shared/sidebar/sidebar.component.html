@@ -1,22 +1,32 @@
 <div class="example-container">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Inicio</h1>
+    <h1 class="example-app-name">Menu</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav>
       <mat-nav-list class="px-5">
-        <a mat-list-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-        <a mat-list-item routerLink="/ingresos" routerLinkActive="active" ariaCurrentWhenActive="page">Ingresos</a>
-        <a mat-list-item routerLink="/egresos" routerLinkActive="active" ariaCurrentWhenActive="page">Egresos</a>
-        <a mat-list-item routerLink="/enviarDinero" routerLinkActive="active" ariaCurrentWhenActive="page">Enviar Dinero</a>
-        <a mat-list-item routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page">Plazos Fijos</a>
-        <a mat-list-item routerLink="/contactos" routerLinkActive="active" ariaCurrentWhenActive="page">Contactos</a>
-        <a mat-list-item routerLink="/perfil" routerLinkActive="active" ariaCurrentWhenActive="page">Perfil</a>
-        <a mat-list-item routerLink="/billeteras" routerLinkActive="active" ariaCurrentWhenActive="page">Billeteras</a>
+        <a mat-list-item routerLink="/home" routerLinkActive="active"
+          ariaCurrentWhenActive="page"><mat-icon>home</mat-icon> Home</a>
+        <a mat-list-item routerLink="/ingresos" routerLinkActive="active"
+          ariaCurrentWhenActive="page"><mat-icon>account_balance</mat-icon> Ingresos</a>
+        <a mat-list-item routerLink="/egresos" routerLinkActive="active"
+          ariaCurrentWhenActive="page"><mat-icon>swap_horiz</mat-icon> Egresos</a>
+        <a mat-list-item routerLink="/enviarDinero" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>
+            monetization_on</mat-icon> Enviar Dinero</a>
+        <a mat-list-item routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>
+            money</mat-icon> Plazos
+          Fijos</a>
+        <a mat-list-item routerLink="/contactos" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>
+            contacts</mat-icon> Contactos</a>
+        <a mat-list-item routerLink="/perfil" routerLinkActive="active"
+          ariaCurrentWhenActive="page"><mat-icon>account_box</mat-icon> Perfil</a>
+        <a mat-list-item routerLink="/billeteras" routerLinkActive="active"
+          ariaCurrentWhenActive="page"><mat-icon>account_balance_wallet</mat-icon> Billeteras</a>
+        <button (click)="logout()" mat-button mat-raised-button color="primary"><mat-icon>info</mat-icon>Log
+          Out</button>
       </mat-nav-list>
-      <button (click)="logout()" mat-button color="accent">Log Out</button>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="container">

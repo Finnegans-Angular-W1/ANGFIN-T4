@@ -49,6 +49,11 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { CommonModule } from '@angular/common';
+import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
+import { ExpensesService } from './core/services/expenses.service';
 
 
 
@@ -67,6 +72,9 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    TwWidgetComponent,
+    BalanceLoadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -75,6 +83,7 @@ import { ShellComponent } from './components/shell/shell.component';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
@@ -86,10 +95,13 @@ import { ShellComponent } from './components/shell/shell.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    FormsModule,
     
   ],
   providers: [
+    ExpensesService,
     {
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }

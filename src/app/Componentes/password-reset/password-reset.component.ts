@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 
 // import custom validator to validate that password and confirm password fields match
 import { MustMatch } from './_helpers';
@@ -27,11 +25,8 @@ export class PasswordResetComponent {
     validators: MustMatch('password', 'confirmPassword')
   });
 
-  get f() { return this.resetPasswordForm.controls; }
-
   onSubmit() {
     this.submitted = true;
-    console.log(this.resetPasswordForm.value.password);
     // stop here if form is invalid
     if (this.resetPasswordForm.invalid) {
       return;
