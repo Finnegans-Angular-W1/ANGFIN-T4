@@ -1,0 +1,32 @@
+footer {
+    z-index: 100000;
+    background-color: #3f51b5;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    img{
+        max-width: 200px;
+        height: auto;
+    }
+
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        
+    }
+
+    li{
+        list-style: none;
+    }
+
+    mat-grid-list{
+        margin: 1rem;
+    }
+
+    mat-icon{
+        margin-top: 0.5rem;
+        margin-right: 0.3rem;
+    }
+  }
+  
