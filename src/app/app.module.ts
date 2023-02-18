@@ -34,7 +34,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -106,6 +106,9 @@ import { ExpensesService } from './core/services/expenses.service';
     FormsModule,
     MatTableModule,
     MatSortModule
+    CommonModule,
+    FormsModule,
+    MatGridListModule
     CommonModule,
     FormsModule,
 
