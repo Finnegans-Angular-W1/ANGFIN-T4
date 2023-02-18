@@ -1,26 +1,27 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-    import { Subscription } from 'rxjs';
-    import { AlertService } from '../../core/services/alert.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
     
-    @Component({
-        selector: 'alert',
-        templateUrl: 'alert.component.html',
-        styleUrls: ['alert.component.scss']
-    })
+@Component({
+    selector: 'alert',
+    templateUrl: 'alert.component.html',
+    styleUrls: ['alert.component.scss']
+})
 
-    export class AlertComponent implements OnInit, OnDestroy {
-        private subscription: Subscription = new Subscription();
-        message: any;
+export class AlertComponent implements OnInit {
 
-        constructor(private alertService: AlertService) { }
-
-        ngOnInit() {
-            this.subscription = this.alertService.getMessage().subscribe(message => { 
-                this.message = message; 
-            });
+    constructor(
+        public dialog: MatDialogRef<AlertComponent>,
+        @Inject(MAT_DIALOG_DATA)
+        public data: {
+            title: string,
+            message: string,
         }
+    ) { }
 
-        ngOnDestroy() {
-            this.subscription.unsubscribe();
-        }
+    ngOnInit() {}
+    
+    confirm() {
+    this.dialog.close(true);
     }
+
+}

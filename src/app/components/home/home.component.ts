@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
 import { Observable } from 'rxjs';
-import { selectUser } from '../../core/state/selectors/auth.selectors';
+import { selectToken, selectUser } from '../../core/state/selectors/auth.selectors';
 import { User } from '../../core/interfaces/user';
 
 @Component({
@@ -14,12 +14,14 @@ export class HomeComponent implements OnInit {
 
   user: Observable<User>;
 
-  constructor( private store: Store<AppState> ) {
+  constructor(private store: Store<AppState>) {
     this.user = this.store.select(selectUser);
 
     this.user.subscribe(user => console.log(user));
+
   }
   ngOnInit(): void {
   }
+
 
 }

@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSidenavModule} from '@angular/material/sidenav';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import { MatListModule} from '@angular/material/list';
-import { MatIconModule} from '@angular/material/icon';
-import { MatButtonModule} from '@angular/material/button';
+import {  MatSidenavModule } from '@angular/material/sidenav';
+import {  MatToolbarModule } from '@angular/material/toolbar';
+import {  MatListModule } from '@angular/material/list';
+import {  MatIconModule } from '@angular/material/icon';
+import {  MatButtonModule } from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
-import { MapComponent } from './map/map.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,25 +26,30 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
 import { AppRoutingModule } from '../app-routing.module';
 import { ExpenseEditorComponent } from './expense-editor/expense-editor.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { AlertComponent } from './alerts/alert.component';
 
 
 @NgModule({
   declarations: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent,  
+    TitulosComponent,
     DialogComponent,
     TransactionsFormComponent,
     CurrencyConverterComponent,
     InvestmentCalcComponent,
+    AlertComponent,
     ExpenseEditorComponent,
-    FooterComponent,
+    FooterComponent
   ],
   exports: [
     SidebarComponent,
     SpinnerComponent,
     TitulosComponent,
+    AlertComponent,
+    TransactionsFormComponent,
     ExpenseEditorComponent,
     FooterComponent,
   ],
@@ -68,6 +72,10 @@ import { FooterComponent } from './footer/footer.component';
     MatDatepickerModule,
     MatGridListModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatTableModule,
+    MatSortModule
+
   ]
 })
 export class SharedModule { }

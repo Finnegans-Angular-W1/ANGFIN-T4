@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
-import { selectUser } from '../../core/state/selectors/auth.selectors';
+import { selectToken, selectUser } from '../../core/state/selectors/auth.selectors';
+import { TransactionsService } from 'src/app/core/services/transactions.service';
+import { Observable } from 'rxjs';
+import { Transaction } from 'src/app/core/interfaces/transaction';
+import { MatCardLgImage } from '@angular/material/card';
 
 @Component({
   selector: 'app-transactions-list',
@@ -11,32 +15,39 @@ import { selectUser } from '../../core/state/selectors/auth.selectors';
 })
 export class TransactionsListComponent implements OnInit {
 
-  constructor(private http: HttpClient, private store: Store<AppState>) { 
+  userId: any = 0;
+  transactions$: any;
+
+  constructor(private http: HttpClient, private store: Store<AppState>, private transactionsService: TransactionsService) {
+
+    this.transactions$=this.transactionsService.getTransactions()
     
   }
 
-  transactions: any[] = [];
-  userId: any = 0;
-
   ngOnInit() {
-    
+
+    this.store.select(selectToken).subscribe(token => console.log(token));
+
     this.store.select(selectUser)
       .subscribe(user => {
         this.userId = user.id;
-        this.getTransactions();
+        console.log(user)
       });
   }
 
-  getTransactions() {
+  /*getTransactions() {
     this.http.get<any[]>('http://wallet-main.eba-ccwdurgr.us-east-1.elasticbeanstalk.com/transactions')
-      .subscribe(transactions => {
-        this.transactions = transactions
-          .filter(transaction => transaction.userId === this.userId)
-          .sort((a, b) => {
+      .subscribe((transactions: any) => {
+        console.log(transactions.data)
+        this.transactions$ = transactions.data
+          .filter((transaction: any) => transaction.userId === this.userId)
+          .sort((a: any, b: any) => {
             const dateA = Date.parse(a.date);
             const dateB = Date.parse(b.date);
             return dateB - dateA;
           });
-      });
-  }
+      });*/
+
+
+  
 }
