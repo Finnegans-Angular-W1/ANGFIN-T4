@@ -37,14 +37,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
-
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
@@ -73,7 +71,6 @@ import { ExpensesService } from './core/services/expenses.service';
     HomeComponent,
     DivisasComponent,
     EnviodedineroComponent,
-    FooterComponent,
     TipoDeCambioComponent,
     ProfileComponent,
     PasswordResetComponent,
@@ -105,8 +102,7 @@ import { ExpensesService } from './core/services/expenses.service';
     MatFormFieldModule,
     FormsModule,
     MatTableModule,
-    MatSortModule
-    CommonModule,
+    MatSortModule,
     FormsModule,
     MatGridListModule
     CommonModule,
