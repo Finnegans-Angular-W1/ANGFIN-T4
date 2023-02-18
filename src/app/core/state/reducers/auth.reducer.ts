@@ -10,7 +10,7 @@ export const initialState: AuthState = { loading: false, user: {} as User, token
 export const authReducer = createReducer(
     initialState,
     on(sendLoginFormError, (state, { error }) => {
-        return { ...state, error }
+        return { ...state, error, loading: false }
     }),
     on(sendLoginForm, (state, { user }) => {
         return { ...state, loading: true, user }
@@ -19,7 +19,7 @@ export const authReducer = createReducer(
         return { ...state, loading: false, token, error: null }
     }),
     on(sendRegisterFormError, (state, { error }) => {
-        return { ...state, error }
+        return { ...state, error, loading: false }
     }),
     on(sendRegisterForm, (state, { user }) => {
         return { ...state, loading: true }

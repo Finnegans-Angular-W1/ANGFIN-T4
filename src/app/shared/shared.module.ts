@@ -19,11 +19,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { InvestmentCalcComponent } from './investment-calc/investment-calc.component';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AlertComponent } from './alerts/alert.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { AppRoutingModule } from '../app-routing.module';
     TransactionsFormComponent,
     CurrencyConverterComponent,
     InvestmentCalcComponent,
-
+    AlertComponent
   ],
   exports: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent
+    TitulosComponent,
+    AlertComponent,
+    TransactionsFormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -57,8 +61,8 @@ import { AppRoutingModule } from '../app-routing.module';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    MatDatepickerModule
-
+    MatDatepickerModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class SharedModule { }

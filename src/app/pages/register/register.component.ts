@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
-import { selectAuthError } from '../../core/state/selectors/auth.selectors';
+import { selectAuthError, selectAuthLoading } from '../../core/state/selectors/auth.selectors';
 import { sendRegisterForm } from '../../core/state/actions/auth.actions';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { AlertComponent } from '../../shared/alerts/alert.component';
 
 @Component({
   selector: 'app-register',
@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   error$ = this.store.select(selectAuthError);
   error: any = null
+  loading$ = this.store.select(selectAuthLoading);
 
   constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router, private dialog: MatDialog) {
     this.form = this.fb.group({
@@ -29,9 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.error$.subscribe(error => {
-      this.error = error;
-    });
+    this.error$.subscribe(error => this.error = error);
   }
 
   register() {
@@ -42,12 +41,10 @@ export class RegisterComponent implements OnInit {
     setTimeout(() => {
       if (this.error) {
         this.dialog.open(
-          DialogComponent, {
+          AlertComponent, {
             data: {
               title: 'Error al registrarse',
               message: this.error.error.error,
-              confirmText: 'Aceptar',
-              cancelText: 'Cerrar'
             }
           }
         )

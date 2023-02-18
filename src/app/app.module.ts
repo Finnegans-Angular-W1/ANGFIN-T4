@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import {MatListModule} from '@angular/material/list';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -43,13 +42,18 @@ import { AuthEffects } from './core/state/effects/auth.effects';
 import { EnviodedineroComponent } from './components/enviodedinero/enviodedinero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
-import { ErrorInterceptorService } from './core/services/interceptors/error.interceptor.service';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { TipoDeCambioComponent } from './shared/tipoDeCambio/tipoDeCambio.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { CommonModule } from '@angular/common';
+import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
+import { ExpensesService } from './core/services/expenses.service';
 
 
 
@@ -68,6 +72,9 @@ import { ShellComponent } from './components/shell/shell.component';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    TwWidgetComponent,
+    BalanceLoadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -76,6 +83,7 @@ import { ShellComponent } from './components/shell/shell.component';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
@@ -89,13 +97,13 @@ import { ShellComponent } from './components/shell/shell.component';
     MatFormFieldModule,
     FormsModule,
     MatGridListModule
+    CommonModule,
+    FormsModule,
   ],
   providers: [
+    ExpensesService,
     {
-      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }
   ],
   bootstrap: [AppComponent]
