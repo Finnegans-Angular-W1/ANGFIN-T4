@@ -15,11 +15,9 @@ export class ProfileComponent implements OnInit {
 
   user: Observable<User>;
   usuario!: User;
-
   constructor(private store: Store<AppState> ) { 
     this.user = this.store.select(selectUser);
     this.user.subscribe(user => this.usuario = user);
-
   }
 
   ngOnInit(): void {
