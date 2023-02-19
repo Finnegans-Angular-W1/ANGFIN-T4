@@ -1,12 +1,12 @@
   .example-card {
     margin: 1rem auto;
-    max-width: 400px;
+    max-width: 500px;
   }
 
   .example-header-image {
-    height: 5rem;
-    width: 5rem;
-    background-image: url('https://www.pngitem.com/pimgs/m/592-5922762_user-icon-material-design-hd-png-download.png');
+    height: 6rem;
+    width: 6rem;
+    background-image: url(../../../assets/favico.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -19,6 +19,9 @@
         text-align: center;
     }
 
+    mat-list-item{
+      text-overflow: ellipsis;
+    }
 
 ::ng-deep .mat-card-header-text {
     display: none;
