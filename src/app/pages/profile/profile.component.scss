@@ -15,13 +15,37 @@
     display: block;
     margin: 1rem auto;
   }
-    mat-card-title{
-        text-align: center;
-    }
 
-    mat-list-item{
-      text-overflow: ellipsis;
-    }
+  
+  mat-card-title{
+      text-align: center;
+  }
+
+  mat-list-item{
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  mat-list-item:nth-last-child(1){
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    letter-spacing: 0.4rem;
+    text-overflow: ellipsis;
+    border:none;
+    align-content: center;
+  }
+
+  mat-list-item:nth-last-child(1) span{
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  span{
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    margin-right: 0.2rem;
+  }
 
 ::ng-deep .mat-card-header-text {
     display: none;

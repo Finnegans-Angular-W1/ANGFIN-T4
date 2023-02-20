@@ -24,7 +24,6 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { ExpenseEditorComponent } from './expense-editor/expense-editor.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -44,7 +43,6 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     CurrencyConverterComponent,
     InvestmentCalcComponent,
     AlertComponent,
-    ExpenseEditorComponent,
     FooterComponent,
     TwWidgetComponent,
     CreditCardComponent,
@@ -56,7 +54,6 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     TitulosComponent,
     AlertComponent,
     TransactionsFormComponent,
-    ExpenseEditorComponent,
     FooterComponent,
     CreditCardComponent,
     TwWidgetComponent
@@ -83,8 +80,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatDatepickerModule,
     MatTableModule,
     MatSortModule,
-    MatCardModule
-
+    MatCardModule,
   ]
 })
 export class SharedModule { }

@@ -56,9 +56,6 @@ import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.compo
 import { ExpensesService } from './core/services/expenses.service';
 import { CreditCardComponent } from './shared/credit-card/credit-card.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,7 +99,6 @@ import { CreditCardComponent } from './shared/credit-card/credit-card.component'
     MatGridListModule,
     CommonModule,
     FormsModule,
-
   ],
   providers: [
     ExpensesService,
