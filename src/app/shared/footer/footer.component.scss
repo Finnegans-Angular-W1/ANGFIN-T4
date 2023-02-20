@@ -1,8 +1,9 @@
 footer {
-    z-index: 100000;
-    background-color: #3f51b5;
+    z-index: 2;
+    background-color: #c2185b;
     width: 100%;
     position: absolute;
+    left: 0;
     bottom: 0;
 
     img{
@@ -13,7 +14,6 @@ footer {
     a{
         text-decoration: none;
         color: #ffffff;
-        
     }
 
     li{
@@ -27,6 +27,10 @@ footer {
     mat-icon{
         margin-top: 0.5rem;
         margin-right: 0.3rem;
+    }
+
+    i{
+        margin-right: 0.1rem;
     }
   }
   

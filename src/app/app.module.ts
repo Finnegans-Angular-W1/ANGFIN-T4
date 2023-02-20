@@ -54,9 +54,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
-
-
-
+import { CreditCardComponent } from './shared/credit-card/credit-card.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +72,6 @@ import { ExpensesService } from './core/services/expenses.service';
     ShellComponent,
     OperationsComponent,
     BalanceLoadComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -102,7 +99,6 @@ import { ExpensesService } from './core/services/expenses.service';
     MatGridListModule,
     CommonModule,
     FormsModule,
-
   ],
   providers: [
     ExpensesService,
