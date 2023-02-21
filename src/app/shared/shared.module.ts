@@ -24,12 +24,13 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { ExpenseEditorComponent } from './expense-editor/expense-editor.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { AlertComponent } from './alerts/alert.component';
 import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { MatCard, MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -42,9 +43,10 @@ import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
     CurrencyConverterComponent,
     InvestmentCalcComponent,
     AlertComponent,
-    ExpenseEditorComponent,
     FooterComponent,
-    TwWidgetComponent
+    TwWidgetComponent,
+    CreditCardComponent,
+    TwWidgetComponent,
   ],
   exports: [
     SidebarComponent,
@@ -52,8 +54,9 @@ import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
     TitulosComponent,
     AlertComponent,
     TransactionsFormComponent,
-    ExpenseEditorComponent,
     FooterComponent,
+    CreditCardComponent,
+    TwWidgetComponent
   ],
   imports: [
     AppRoutingModule,
@@ -76,8 +79,8 @@ import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
     MatProgressSpinnerModule,
     MatDatepickerModule,
     MatTableModule,
-    MatSortModule
-
+    MatSortModule,
+    MatCardModule,
   ]
 })
 export class SharedModule { }

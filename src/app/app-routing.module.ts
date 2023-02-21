@@ -16,21 +16,23 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { AlertComponent } from './shared/alerts/alert.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
   {
     path: '',
     component: ShellComponent,
     children: [
       { path: 'sidebar', component: SidebarComponent },
-      { path: 'home', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       //{ path: 'operations', component: OperationsComponent },
     ]
   },
+  { path: 'landing', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path:'**', component: E404Component}

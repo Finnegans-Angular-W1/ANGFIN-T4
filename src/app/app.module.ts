@@ -54,6 +54,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 
@@ -74,6 +75,7 @@ import { ExpensesService } from './core/services/expenses.service';
     ShellComponent,
     OperationsComponent,
     BalanceLoadComponent,
+    LandingPageComponent,
 
   ],
   imports: [
@@ -102,7 +104,6 @@ import { ExpensesService } from './core/services/expenses.service';
     MatGridListModule,
     CommonModule,
     FormsModule,
-
   ],
   providers: [
     ExpensesService,
