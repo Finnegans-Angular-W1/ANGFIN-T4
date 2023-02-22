@@ -55,6 +55,7 @@ import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
 
 
 
@@ -76,6 +77,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     OperationsComponent,
     BalanceLoadComponent,
     LandingPageComponent,
+    MoneyTransferComponent,
 
   ],
   imports: [
