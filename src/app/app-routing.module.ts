@@ -17,6 +17,7 @@ import { OperationsComponent } from './components/operations/operations.componen
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { AlertComponent } from './shared/alerts/alert.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,8 @@ const routes: Routes = [
     children: [
       { path: 'sidebar', component: SidebarComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'ingresos', component: TransactionsListComponent, canActivate: [AuthGuard] },
+      { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       //{ path: 'operations', component: OperationsComponent },
