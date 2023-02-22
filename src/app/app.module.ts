@@ -7,12 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-<<<<<<< HEAD
-import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
+//import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import { MatListModule } from '@angular/material/list';
-=======
-import {MatListModule} from '@angular/material/list';
->>>>>>> d38087e7a36e351f0afcdc5a420fe11afd595453
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './components/home/home.component';
@@ -61,6 +57,7 @@ import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 import { CommonModule } from '@angular/common';
 import { OperationsComponent } from './components/operations/operations.component';
 import { jwtInterceptor } from './core/interceptors/http.interceptor';
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
 
 
@@ -80,7 +77,8 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     TransactionsListComponent,
     ShellComponent,
     TwWidgetComponent,
-    OperationsComponent
+    OperationsComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
@@ -110,14 +108,10 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
   ],
   providers: [
     {
-<<<<<<< HEAD
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
     {
-      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true
-=======
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
->>>>>>> d38087e7a36e351f0afcdc5a420fe11afd595453
     }
   ],
   bootstrap: [AppComponent]

@@ -16,6 +16,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { AlertComponent } from './shared/alerts/alert.component';
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
