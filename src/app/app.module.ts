@@ -56,6 +56,9 @@ import { PasswordResetComponent } from './Componentes/password-reset/password-re
 
 import { Error404Component } from './components/error404/error404.component';
 import { ShellComponent } from './components/shell/shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { CommonModule } from '@angular/common';
 import { OperationsComponent } from './components/operations/operations.component';
 import { jwtInterceptor } from './core/interceptors/http.interceptor';
 
@@ -76,6 +79,7 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     PasswordResetComponent,
     TransactionsListComponent,
     ShellComponent,
+    TwWidgetComponent,
     OperationsComponent
   ],
   imports: [
@@ -85,6 +89,7 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSliderModule,
     SharedModule,
@@ -96,6 +101,8 @@ import { jwtInterceptor } from './core/interceptors/http.interceptor';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
+    FormsModule,
+    CommonModule,
     FormsModule,
     MatTableModule,
     MatSortModule

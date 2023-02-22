@@ -25,6 +25,7 @@ import { TransactionsFormComponent } from './transactions-form/transactions-form
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AlertComponent } from './alerts/alert.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -38,12 +39,13 @@ import { MatSortModule } from '@angular/material/sort';
     TransactionsFormComponent,
     CurrencyConverterComponent,
     InvestmentCalcComponent,
-
+    AlertComponent
   ],
   exports: [
     SidebarComponent,
     SpinnerComponent,
-    TitulosComponent
+    TitulosComponent,
+    AlertComponent,
   ],
   imports: [
     AppRoutingModule,
