@@ -1,17 +1,15 @@
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-    </mat-card-header>
-    <mat-card-title>{{usuario.first_name}} {{usuario.last_name}}</mat-card-title>
-    <mat-card-content>
-        <mat-list role="list">
-            <mat-list-item role="listitem">Nombre: {{usuario.first_name}}</mat-list-item>
-            <mat-list-item role="listitem">Apellido: {{usuario.last_name}}</mat-list-item>
-            <mat-list-item role="listitem">Email: {{usuario.email}}</mat-list-item>
-            <mat-list-item role="listitem">Monto: ${{usuario.points}}</mat-list-item>
-        </mat-list>
-    </mat-card-content>
-  </mat-card>
-
-
-  <p>fir</p>
+<mat-card class="example-card mb-3">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+  </mat-card-header>
+  <mat-card-title>{{usuario.first_name}} {{usuario.last_name}}</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem"><span>Nombre:</span>{{usuario.first_name}}</mat-list-item>
+      <mat-list-item role="listitem"><span>Apellido:</span> {{usuario.last_name}}</mat-list-item>
+      <mat-list-item role="listitem"><span>Email:</span> {{usuario.email}}</mat-list-item>
+      <mat-list-item class="d-flex align-items-center justify-content-center"><span>${{usuario.points}}</span></mat-list-item>
+    </mat-list>
+    <app-credit-card class="d-none d-sm-block d-ms-block d-lg-block d-xl-block"></app-credit-card>
+  </mat-card-content>
+</mat-card>

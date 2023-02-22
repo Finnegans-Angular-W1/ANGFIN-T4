@@ -17,3 +17,8 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick, 
+:host ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label, .mat-error {
+      color: #fff !important;
+}

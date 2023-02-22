@@ -9,28 +9,34 @@ import { TransactionsFormComponent } from './shared/transactions-form/transactio
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { PasswordResetComponent } from './Componentes/password-reset/password-reset.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ShellComponent } from './components/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { OperationsComponent } from './components/operations/operations.component';
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { AlertComponent } from './shared/alerts/alert.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
   {
     path: '',
     component: ShellComponent,
     children: [
       { path: 'sidebar', component: SidebarComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'ingresos', component: TransactionsListComponent, canActivate: [AuthGuard] },
+      { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       //{ path: 'operations', component: OperationsComponent },
     ]
   },
+  { path: 'landing', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path:'**', component: E404Component}

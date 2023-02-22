@@ -1,9 +1,9 @@
-<div class="container-fluid overflow-hidden">
+<div class="container-fluid overflow-hidden gradient">
     <div class="row justify-content-center align-items-center vh-100">
-        <div *ngIf="!(loading$ | async)" class="col-md-12 col-sm-12 col-lg-6 col-12">
+        <div *ngIf="!(loading$ | async)" class="col-md-12 col-sm-12 col-lg-6 col-12 text-white">
             <div class="mx-auto w-75">
-                <p class="fw-normal fs-1 text-center">¡Bienvenido de vuelta!</p>
-                <p class="fw-light mt-5 fs-6 text-center">Bienvenido, por favor ingrese sus credenciales.</p>
+                <p class="fw-bold fs-1 text-center">¡Bienvenido de vuelta!</p>
+                <p class="mt-5 fs-4 text-center">Bienvenido, por favor ingrese sus credenciales.</p>
                 <form [formGroup]="form" (ngSubmit)="Login()">
                     <div class="mb-3 mt-5">
                         <mat-form-field class="w-100" appearance="outline">
@@ -23,15 +23,12 @@
                             </mat-error>
                         </mat-form-field>
                     </div>
-                    <p class="purple-text text-end mb-3">
-                        <a class="purple-text text-decoration-none fw-bold" routerLink="/">Olvide mi contraseña</a>
-                    </p>
                     <div class="d-grid gap-2 mb-3">
                         <button mat-raised-button color="primary" class="p-2">
                             Iniciar sesión
                         </button>
                     </div>
-                    <p class="text-center mt-4 fw-light">¿No tienes una cuenta? <a class="text-decoration-none purple-text fw-bold" routerLink="/register">Registrate</a></p>
+                    <p class="text-center mt-4 fs-6">¿No tienes una cuenta? <a class="text-decoration-none purple-text fw-bold" routerLink="/register">Registrate</a></p>
                 </form>
             </div>
         </div>

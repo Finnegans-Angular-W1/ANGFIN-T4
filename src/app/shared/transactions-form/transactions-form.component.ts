@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Transaction } from '../../core/interfaces/transaction';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transactions-form',
@@ -10,10 +11,12 @@ import { Transaction } from '../../core/interfaces/transaction';
 export class TransactionsFormComponent implements OnInit {
 
   @Input() transaction!: Transaction; 
+  @Output() newItemEvent = new EventEmitter<string>();
 
   form!: FormGroup;
+  
 
-  constructor( private fb: FormBuilder ) { }
+  constructor( private fb: FormBuilder, private router: Router ) { }
 
   ngOnInit(): void {
     if (this.transaction) {
@@ -24,6 +27,7 @@ export class TransactionsFormComponent implements OnInit {
   }
 
   createForm() {
+    
     this.form = this.fb.group({
       amount: ['', [Validators.required, Validators.min(1)]],
       concept: ['', [Validators.required]],
@@ -40,11 +44,21 @@ export class TransactionsFormComponent implements OnInit {
   }
 
   submit() {
+    
     if (this.form.invalid) {
       return;
     }
+    this.addNewItem(this.form.getRawValue())
+  }
 
-    console.log(this.form.getRawValue());
+  addNewItem(transaction: any){
+    this.newItemEvent.emit(transaction)
+  }
+
+  redirectToHome(){
+    this.router.navigateByUrl('/home')
+
   }
 
 }
+

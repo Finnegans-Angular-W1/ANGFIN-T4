@@ -1,18 +1,16 @@
 <div class="example-container">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Menu</h1>
+    <h1 class="example-app-name">AlkyBank</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav>
       <mat-nav-list class="px-5">
         <a mat-list-item routerLink="/home" routerLinkActive="active"
-          ariaCurrentWhenActive="page"><mat-icon>home</mat-icon> Home</a>
+          ariaCurrentWhenActive="page"><mat-icon>home</mat-icon>Home</a>
         <a mat-list-item routerLink="/ingresos" routerLinkActive="active"
-          ariaCurrentWhenActive="page"><mat-icon>account_balance</mat-icon> Ingresos</a>
-        <a mat-list-item routerLink="/egresos" routerLinkActive="active"
-          ariaCurrentWhenActive="page"><mat-icon>swap_horiz</mat-icon> Egresos</a>
+          ariaCurrentWhenActive="page"><mat-icon>account_balance</mat-icon> Ingresos/Egresos</a>
         <a mat-list-item routerLink="/enviarDinero" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>
             monetization_on</mat-icon> Enviar Dinero</a>
         <a mat-list-item routerLink="/plazosFijos" routerLinkActive="active" ariaCurrentWhenActive="page"><mat-icon>
@@ -24,9 +22,9 @@
           ariaCurrentWhenActive="page"><mat-icon>account_box</mat-icon> Perfil</a>
         <a mat-list-item routerLink="/billeteras" routerLinkActive="active"
           ariaCurrentWhenActive="page"><mat-icon>account_balance_wallet</mat-icon> Billeteras</a>
-        <button (click)="logout()" mat-button mat-raised-button color="primary"><mat-icon>info</mat-icon>Log
-          Out</button>
       </mat-nav-list>
+      <button (click)="logout()" mat-button mat-raised-button color="primary" class="mx-auto d-flex justify-content-center mt-3"><mat-icon>info</mat-icon>Log
+        Out</button>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="container">
