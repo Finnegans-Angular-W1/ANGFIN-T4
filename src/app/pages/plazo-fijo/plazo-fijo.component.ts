@@ -11,8 +11,6 @@ import { selectToken, selectUser } from '../../core/state/selectors/auth.selecto
 import { Observable } from 'rxjs';
 import { User } from 'src/app/core/interfaces/user';
 
-
-
 @Component({
   selector: 'app-plazo-fijo',
   templateUrl: './plazo-fijo.component.html',
@@ -30,10 +28,6 @@ export class PlazoFijoComponent implements OnInit {
     this.form = this.fb.group({
       importe: new FormControl('', [Validators.required, Validators.pattern(/^([0-9])*$/)]),
       concepto: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$')]),
-
-      last_name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$')]),
-      email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     })
   };
 
@@ -46,20 +40,16 @@ export class PlazoFijoComponent implements OnInit {
   endDatePlazoFijo: any
   daysBetween: any
 
-  calcularDias(){
+  calcularDias() {
     const startDatePlazoFijo1 = new Date(this.startDatePlazoFijo);
     const endDatePlazoFijo1 = new Date(this.endDatePlazoFijo);
-    const Time = startDatePlazoFijo1.getTime() - endDatePlazoFijo1.getTime();
+    const Time = endDatePlazoFijo1.getTime() - startDatePlazoFijo1.getTime();
     this.daysBetween = Time / (1000 * 3600 * 24);
   }
-
-
-
 
   userId: any = 0;
 
   ngOnInit() {
-
     this.store.select(selectToken).subscribe(token => console.log(token));
 
     this.store.select(selectUser)
@@ -67,7 +57,6 @@ export class PlazoFijoComponent implements OnInit {
         this.userId = user.id;
       });
   };
-
 
   plazoFijo() {
     if (this.form.invalid) {
