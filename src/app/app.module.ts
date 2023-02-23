@@ -56,6 +56,7 @@ import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.compo
 import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 
 
@@ -78,6 +79,7 @@ import { MoneyTransferComponent } from './components/money-transfer/money-transf
     BalanceLoadComponent,
     LandingPageComponent,
     MoneyTransferComponent,
+    DepositMoneyComponent,
 
   ],
   imports: [

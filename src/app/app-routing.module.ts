@@ -18,6 +18,7 @@ import { TransactionsListComponent } from './pages/transactions-list/transaction
 import { AlertComponent } from './shared/alerts/alert.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,8 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'ingresos', component: TransactionsListComponent, canActivate: [AuthGuard] },
       { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'enviar-dinero', component: MoneyTransferComponent, canActivate: [AuthGuard] },
+      { path: 'depositar-dinero', component: DepositMoneyComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       //{ path: 'operations', component: OperationsComponent },
