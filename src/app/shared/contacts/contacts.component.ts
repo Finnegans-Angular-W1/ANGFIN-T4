@@ -9,28 +9,7 @@ import { AddContactDialogComponent } from '../add-contact-dialog/add-contact-dia
 })
 export class ContactsComponent implements OnInit {
 
-  contactos: Array<any> = [
-    { nombre: 'Juan Perez', entidadBancaria: 'Banco Macro' },
-    { nombre: 'Maria Rodriguez', entidadBancaria: 'Banco Santander' },
-    { nombre: 'Pedro Gonzalez', entidadBancaria: 'BBVA' },
-    { nombre: 'Laura Fernandez', entidadBancaria: 'Banco Nación' },
-    { nombre: 'Diego Martinez', entidadBancaria: 'HSBC' },
-    { nombre: 'Ana Gomez', entidadBancaria: 'Banco Galicia' },
-    { nombre: 'Carlos Aguilar', entidadBancaria: 'Banco Patagonia' },
-    { nombre: 'Mariano Torres', entidadBancaria: 'Banco Supervielle' },
-    { nombre: 'Lucia Sosa', entidadBancaria: 'Banco Hipotecario' },
-    { nombre: 'Luisa Martinez', entidadBancaria: 'Banco Ciudad' },
-    { nombre: 'Jorge Fernandez', entidadBancaria: 'Banco Columbia' },
-    { nombre: 'Gabriela Ramos', entidadBancaria: 'Banco Comafi' },
-    { nombre: 'Hernan Gonzalez', entidadBancaria: 'Banco ICBC' },
-    { nombre: 'Florencia Rodriguez', entidadBancaria: 'Banco Credicoop' },
-    { nombre: 'Julian Ortiz', entidadBancaria: 'AlkyBank' },
-    { nombre: 'Maria Jose Sanchez', entidadBancaria: 'AlkyBank' },
-    { nombre: 'Ezequiel Fernandez', entidadBancaria: 'Banco Santander Rio' },
-    { nombre: 'Laura Martinez', entidadBancaria: 'AlkyBank' },
-    { nombre: 'Miguel Torres', entidadBancaria: 'Banco Macro' },
-    { nombre: 'Valeria Aguilar', entidadBancaria: 'AlkyBank' },
-  ];
+  contactos: Array<any> = [  { nombre: 'Juan Perez', entidadBancaria: 'AlkyBank' },  { nombre: 'Maria Rodriguez', entidadBancaria: 'Banco Santander' },  { nombre: 'Pedro Gonzalez', entidadBancaria: 'BBVA' },  { nombre: 'Laura Fernandez', entidadBancaria: 'Alky Bank' },  { nombre: 'Diego Martinez', entidadBancaria: 'HSBC' },  { nombre: 'Ana Gomez', entidadBancaria: 'Banco Macro' },  { nombre: 'Carlos Aguilar', entidadBancaria: 'Banco Santander' },  { nombre: 'Mariano Torres', entidadBancaria: 'BBVA' },  { nombre: 'Lucia Sosa', entidadBancaria: 'AlkyBank' },  { nombre: 'Luisa Martinez', entidadBancaria: 'Banco Nación' },  { nombre: 'Jorge Fernandez', entidadBancaria: 'HSBC' },  { nombre: 'Gabriela Ramos', entidadBancaria: 'Banco Macro' },  { nombre: 'Hernan Gonzalez', entidadBancaria: 'Banco Santander' },  { nombre: 'Florencia Rodriguez', entidadBancaria: 'AlkyBank' },  { nombre: 'Julian Ortiz', entidadBancaria: 'Banco Nación' },  { nombre: 'Maria Jose Sanchez', entidadBancaria: 'HSBC' },  { nombre: 'Ezequiel Fernandez', entidadBancaria: 'Banco Macro' },  { nombre: 'Laura Martinez', entidadBancaria: 'AlkyBank' },  { nombre: 'Miguel Torres', entidadBancaria: 'Banco Santander' },  { nombre: 'Valeria Aguilar', entidadBancaria: 'AlkyBank' }];
 
   constructor(public dialog: MatDialog) { 
   
@@ -56,11 +35,13 @@ export class ContactsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.contactos.unshift(result.nombre, result.entidadBancaria);
-        this.agregarImagenes();
+        this.contactos.unshift({nombre: result.nombre, entidadBancaria: result.entidadBancaria});
+        this.ngOnInit();
       }
     });
   }
+
+ 
 
   agregarImagenes() {
     this.contactos.forEach(contacto => {
