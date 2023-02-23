@@ -23,8 +23,8 @@ export class TransactionsService {
     return this.http.post(`${this.url}/accounts/4`, transaction);
   }
 
-  depositMoney( transaction: any ) {
-    return this.http.post(`${this.url}/accounts/14`, transaction);
+  depositMoney( id: number, transaction: any ) {
+    return this.http.post(`${this.url}/accounts/${id}`, transaction);
   }
 
 }

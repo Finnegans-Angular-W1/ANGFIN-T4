@@ -33,6 +33,7 @@ const routes: Routes = [
       { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
       { path: 'enviar-dinero', component: MoneyTransferComponent, canActivate: [AuthGuard] },
       { path: 'depositar-dinero', component: DepositMoneyComponent, canActivate: [AuthGuard] },
+      { path: 'cambiar-password', component: PasswordResetComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       //{ path: 'operations', component: OperationsComponent },
