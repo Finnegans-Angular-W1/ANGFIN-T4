@@ -31,6 +31,7 @@ import { AlertComponent } from './alerts/alert.component';
 import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     TwWidgetComponent,
     CreditCardComponent,
     TwWidgetComponent,
+    ContactsComponent,
   ],
   exports: [
     SidebarComponent,

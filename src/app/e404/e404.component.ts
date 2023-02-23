@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class E404Component implements OnInit {
 
-  onClick(){
-    console.log;
+  onClick() {
+    this.router.navigateByUrl("/home");
   }
 
   constructor(private router:Router) { 
