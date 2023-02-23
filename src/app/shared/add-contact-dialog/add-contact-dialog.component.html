@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Agregar contacto</h2>
+<div mat-dialog-content>
+  <form #agregarContactoForm="ngForm">
+    <mat-form-field>
+      <input matInput name="nombre" placeholder="Nombre completo" [(ngModel)]="nuevoContacto.nombre" required>
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="entidadBancaria" placeholder="Entidad bancaria" [(ngModel)]="nuevoContacto.entidadBancaria" required>
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-raised-button color="primary" [disabled]="agregarContactoForm.invalid" (click)="dialogRef.close(true)">Agregar</button>
+</div>
+

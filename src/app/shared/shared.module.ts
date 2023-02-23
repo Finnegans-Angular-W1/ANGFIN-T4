@@ -32,6 +32,9 @@ import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { ContactsComponent } from './contacts/contacts.component';
+import { DeleteContactDialogComponent } from './delete-contact-dialog/delete-contact-dialog.component';
+import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dialog.component';
+
 
 
 @NgModule({
@@ -49,6 +52,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     CreditCardComponent,
     TwWidgetComponent,
     ContactsComponent,
+    DeleteContactDialogComponent,
+    AddContactDialogComponent,
   ],
   exports: [
     SidebarComponent,
@@ -58,7 +63,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     TransactionsFormComponent,
     FooterComponent,
     CreditCardComponent,
-    TwWidgetComponent
+    TwWidgetComponent,
+    ContactsComponent,
   ],
   imports: [
     AppRoutingModule,
