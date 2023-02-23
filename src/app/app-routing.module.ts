@@ -19,6 +19,8 @@ import { AlertComponent } from './shared/alerts/alert.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
+import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 
 const routes: Routes = [
@@ -30,7 +32,11 @@ const routes: Routes = [
       { path: 'sidebar', component: SidebarComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'ingresos', component: TransactionsListComponent, canActivate: [AuthGuard] },
+      { path: 'plazosfijos', component: PlazoFijoComponent, canActivate: [AuthGuard] },
       { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'enviar-dinero', component: MoneyTransferComponent, canActivate: [AuthGuard] },
+      { path: 'depositar-dinero', component: DepositMoneyComponent, canActivate: [AuthGuard] },
+      { path: 'cambiar-password', component: PasswordResetComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       { path: 'contactos', component:ContactsComponent, canActivate: [AuthGuard] },

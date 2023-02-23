@@ -56,6 +56,10 @@ import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.compo
 import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 
 
@@ -78,6 +82,8 @@ import { MoneyTransferComponent } from './components/money-transfer/money-transf
     BalanceLoadComponent,
     LandingPageComponent,
     MoneyTransferComponent,
+    PlazoFijoComponent,
+    DepositMoneyComponent,
 
   ],
   imports: [
@@ -106,6 +112,8 @@ import { MoneyTransferComponent } from './components/money-transfer/money-transf
     MatGridListModule,
     CommonModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
   ],
   providers: [
     ExpensesService,

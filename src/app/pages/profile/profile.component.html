@@ -1,4 +1,4 @@
-<mat-card class="example-card mb-3">
+<mat-card class="example-card mb-3 pb-5">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
   </mat-card-header>
@@ -8,8 +8,17 @@
       <mat-list-item role="listitem"><span>Nombre:</span>{{usuario.first_name}}</mat-list-item>
       <mat-list-item role="listitem"><span>Apellido:</span> {{usuario.last_name}}</mat-list-item>
       <mat-list-item role="listitem"><span>Email:</span> {{usuario.email}}</mat-list-item>
-      <mat-list-item class="d-flex align-items-center justify-content-center"><span>${{usuario.points}}</span></mat-list-item>
+      <mat-list-item class="d-flex align-items-center justify-content-center"><span>{{accountMoney | currency}}</span></mat-list-item>
     </mat-list>
     <app-credit-card class="d-none d-sm-block d-ms-block d-lg-block d-xl-block"></app-credit-card>
+    <button (click)="createAccount()" mat-raised-button color="primary" class="p-2 my-3 me-3">
+      <mat-icon>add_circle</mat-icon> Crear cuenta
+    </button>
+    <button (click)="changePassword()" mat-raised-button color="primary" class="p-2 my-3 me-3">
+      <mat-icon>password</mat-icon> Cambiar contraseña
+    </button>
+    <button mat-raised-button color="primary" class="p-2 my-3">
+      <mat-icon>edit</mat-icon> Editar perfil
+    </button>
   </mat-card-content>
 </mat-card>
