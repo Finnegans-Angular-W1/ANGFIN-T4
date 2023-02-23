@@ -28,7 +28,7 @@ export const authReducer = createReducer(
         return { ...state, error: null, loading: false }
     }),
     on(logout, (state) => {
-        return { ...state, error: null, token: undefined, user: {} as User }
+        return { ...state, error: null, token: null, user: {} as User }
     }),
     on(setUserState, (state, {user}) => {
         return { ...state, user }
