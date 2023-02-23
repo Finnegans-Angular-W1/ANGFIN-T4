@@ -38,7 +38,7 @@ export class PasswordResetComponent {
     }
     this.auth.resetPassword(this.resetPasswordForm.value.password).subscribe(resp => {
       this.store.dispatch(logout());
-      this.router.navigateByUrl('/login');
+      window.location.href = '/login';
     }
     )
   }
