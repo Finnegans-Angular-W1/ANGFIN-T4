@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-e404',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class E404Component implements OnInit {
 
-  constructor() { }
+  onClick(){
+    console.log;
+  }
+
+  constructor(private router:Router) { 
+  }
+
 
   ngOnInit(): void {
   }
