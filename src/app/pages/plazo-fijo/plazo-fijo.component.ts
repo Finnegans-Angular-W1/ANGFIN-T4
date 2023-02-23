@@ -32,35 +32,43 @@ export class PlazoFijoComponent implements OnInit {
   };
 
   range = new FormGroup({
-    start: new FormControl<Date | null>(null),
-    end: new FormControl<Date | null>(null),
+    start: new FormControl<Date | null>(null, [Validators.required]),
+    end: new FormControl<Date | null>(null, [Validators.required]),
   });
 
   startDatePlazoFijo: any
   endDatePlazoFijo: any
   daysBetween: any
 
-  calcularDias() {
-    const startDatePlazoFijo1 = new Date(this.startDatePlazoFijo);
-    const endDatePlazoFijo1 = new Date(this.endDatePlazoFijo);
-    const Time = endDatePlazoFijo1.getTime() - startDatePlazoFijo1.getTime();
-    this.daysBetween = Time / (1000 * 3600 * 24);
-  }
-
   userId: any = 0;
-
   ngOnInit() {
-    this.store.select(selectToken).subscribe(token => console.log(token));
-
     this.store.select(selectUser)
       .subscribe(user => {
         this.userId = user.id;
       });
   };
 
+  plazofijohecho: any = []
+
   plazoFijo() {
     if (this.form.invalid) {
       return;
     }
+    const startDatePlazoFijo1 = new Date(this.startDatePlazoFijo);
+    const endDatePlazoFijo1 = new Date(this.endDatePlazoFijo);
+    const Time = endDatePlazoFijo1.getTime() - startDatePlazoFijo1.getTime();
+    this.daysBetween = Time / (1000 * 3600 * 24);
+    const montoTotal = this.form.value.importe * 1.6 * this.daysBetween;
+
+    this.dialog.open(
+      AlertComponent, {
+      data: {
+        title: 'Confirme los datos para el procesamiento',
+        message: 'El importe a destinar: ' + this.form.value.importe + ' '
+          + 'La cantidad de día del depósito: ' + this.daysBetween + ' '
+          + 'El monto del plazo fijo con intereses es $' + montoTotal
+      }
+    }
+    )
   }
 }

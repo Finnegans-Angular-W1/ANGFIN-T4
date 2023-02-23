@@ -1,11 +1,11 @@
-<div class="row justify-content-center align-items-center vh-100 ">
-    <div class="mx-auto w-75">
-        <p class="mt-5 fs-4 text-center">Bienvenido, por favor ingrese los valores para el plazo fijo.</p>
+<div class="row justify-content-center align-items-center m-3">
+    <div class="mx-auto w-50">
+        <p class="mt-2 fs-4 text-center">Bienvenido, por favor ingrese los valores para el plazo fijo.</p>
         <form [formGroup]="form" (ngSubmit)="plazoFijo()" id="plazoFijoForm">
-            <div class="mb-3 mt-5">
+            <div class="mb-1 mt-2">
                 <h3>Su saldo es de ${{usuario.points}}</h3>
             </div>
-            <div class="mb-3 mt-5">
+            <div class="mb-1">
                 <mat-form-field class="w-100" appearance="outline">
                     <mat-label>Importe a invertir</mat-label>
                     <input type="importe" matInput autocomplete="off" formControlName="importe">
@@ -43,10 +43,6 @@
                     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
                 </mat-form-field>
             </div>
-            <button (click)="calcularDias()">
-                Cantidad de Días: {{daysBetween}}
-            </button>
-
             <div class="d-grid gap-2 mb-3">
                 <button mat-raised-button color="primary" class="p-2">
                     Crear Plazo Fijo
