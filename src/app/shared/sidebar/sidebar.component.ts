@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit {
 
   logout() {
     this.store.dispatch(logout());
-    this.router.navigateByUrl('/login');
+    window.location.href = '/login';
+    // this.router.navigateByUrl('/login');
   };
 }

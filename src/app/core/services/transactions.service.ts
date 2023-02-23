@@ -19,4 +19,12 @@ export class TransactionsService {
     )
   }
 
+  sendMoney( transaction: any ) {
+    return this.http.post(`${this.url}/accounts/4`, transaction);
+  }
+
+  depositMoney( id: number, transaction: any ) {
+    return this.http.post(`${this.url}/accounts/${id}`, transaction);
+  }
+
 }

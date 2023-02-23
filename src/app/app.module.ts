@@ -59,6 +59,7 @@ import { MoneyTransferComponent } from './components/money-transfer/money-transf
 import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 
 
@@ -82,6 +83,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     LandingPageComponent,
     MoneyTransferComponent,
     PlazoFijoComponent,
+    DepositMoneyComponent,
 
   ],
   imports: [
