@@ -1,9 +1,9 @@
-<div class="row justify-content-center align-items-center m-3">
+<mat-card class="example-card row justify-content-center align-items-center m-3">
     <div class="mx-auto w-50">
         <p class="mt-2 fs-4 text-center">Ingrese los valores del plazo fijo.</p>
         <form [formGroup]="form" (ngSubmit)="plazoFijo()" id="plazoFijoForm">
             <div class="mb-1 mt-2">
-                <h3>Su saldo es de ${{usuario.points}}</h3>
+                <h3>Su saldo es de {{accountMoney | currency}}</h3>
             </div>
             <div class="mb-1">
                 <mat-form-field class="w-100" appearance="outline">
@@ -12,9 +12,6 @@
                     <mat-error class="text-center">
                         Por favor ingrese un importe correcto
                     </mat-error>
-                    <div *ngIf="this.form.value.importe>1000">
-                        ("El importe no puede ser mayor al saldo")
-                    </div>
                 </mat-form-field>
             </div>
             <div class="mb-3">
@@ -26,7 +23,6 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-
             <div class="mb-3">
                 <mat-form-field class="w-100" appearance="outline">
                     <mat-label>Ingrese fechas</mat-label>
@@ -50,4 +46,4 @@
             </div>
         </form>
     </div>
-</div>
+</mat-card>
