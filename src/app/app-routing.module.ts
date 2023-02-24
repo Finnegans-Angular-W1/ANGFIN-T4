@@ -18,6 +18,7 @@ import { TransactionsListComponent } from './pages/transactions-list/transaction
 import { AlertComponent } from './shared/alerts/alert.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { ContactsComponent } from './shared/contacts/contacts.component';
 import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
 import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'cambiar-password', component: PasswordResetComponent, canActivate: [AuthGuard] },
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
+      { path: 'contactos', component:ContactsComponent, canActivate: [AuthGuard] },
       //{ path: 'operations', component: OperationsComponent },
     ]
   },
