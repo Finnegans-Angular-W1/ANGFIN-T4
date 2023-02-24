@@ -38,3 +38,7 @@ export const setUserState = createAction(
 export const logout = createAction(
     '[Logout] Logout user'
 )
+
+export const editUser = createAction(
+    '[Edit View] Edit user'
+)
