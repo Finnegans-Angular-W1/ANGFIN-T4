@@ -24,7 +24,6 @@ export class OperationsComponent implements OnInit {
 
     this.transactions$.subscribe(transactions=> {
       this.dataSource = transactions;
-      console.log(transactions)
     }  )
 
   }

@@ -1,0 +1,22 @@
+mat-list-item{
+   min-width: 400px;
+   border-radius: 0.2rem;
+
+   h3{
+    letter-spacing: 0.3rem;
+   }
+}
+
+mat-list-item:hover{
+    -webkit-transform: scale(1.1);
+    transition: all 0.5s;
+    background-color: #5e5d5d;
+} 
+
+mat-list{
+    padding: 1rem;
+}
+
+.add-contact{
+    color: greenyellow;
+}

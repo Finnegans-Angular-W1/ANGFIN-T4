@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionsService } from '../../core/services/transactions.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertComponent } from '../../shared/alerts/alert.component';
 
 @Component({
   selector: 'app-money-transfer',
@@ -7,19 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoneyTransferComponent implements OnInit {
 
-  constructor() { }
+  constructor( private transactionsService: TransactionsService, private router: Router, private dialog: MatDialog ) { }
 
   ngOnInit(): void {
   }
 
-  addItem(transaction: any){
+  addItem(transaction: any) {
+
     const newTransaction = {
       type: 'payment',
       amount: transaction.amount,
       date: transaction.date,
       concept: transaction.concept
     }
-    console.log(newTransaction)
+    
+    this.transactionsService.sendMoney(newTransaction).subscribe({
+        next: (resp) => this.router.navigateByUrl('/home'),
+        error: err => {
+          this.dialog.open(
+            AlertComponent, {
+              data: {
+                title: 'Error al realizar la transacción',
+                message: err.error.error,
+              }
+            }
+          )
+        }
+      }
+    )
   }
 
 }

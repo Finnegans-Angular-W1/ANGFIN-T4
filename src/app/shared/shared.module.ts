@@ -28,9 +28,14 @@ import { FooterComponent } from './footer/footer.component';
 import { AlertComponent } from './alerts/alert.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { ContactsComponent } from './contacts/contacts.component';
+import { DeleteContactDialogComponent } from './delete-contact-dialog/delete-contact-dialog.component';
+import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dialog.component';
+
+
+
 
 
 
@@ -45,9 +50,10 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     InvestmentCalcComponent,
     AlertComponent,
     FooterComponent,
-    TwWidgetComponent,
     CreditCardComponent,
-    TwWidgetComponent,
+    ContactsComponent,
+    DeleteContactDialogComponent,
+    AddContactDialogComponent,
   ],
   exports: [
     SidebarComponent,
@@ -57,7 +63,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     TransactionsFormComponent,
     FooterComponent,
     CreditCardComponent,
-    TwWidgetComponent
+    ContactsComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -82,6 +88,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatSortModule,
     MatCardModule,
+    
   ]
 })
 export class SharedModule { }

@@ -30,11 +30,15 @@ export const sendRegisterFormError = createAction(
     props<{ error: any }>()
 )
 
+export const setUserState = createAction(
+    '[Login View] Set user state',
+    props<{ user: User }>()
+    )
+
 export const logout = createAction(
     '[Logout] Logout user'
 )
 
-export const setUserState = createAction(
-    '[Login View] Set user state',
-    props<{ user: User }>()
+export const editUser = createAction(
+    '[Edit View] Edit user'
 )

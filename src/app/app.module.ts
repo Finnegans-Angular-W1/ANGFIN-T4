@@ -58,6 +58,10 @@ import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.compo
 import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
@@ -83,6 +87,8 @@ import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
     BalanceLoadComponent,
     LandingPageComponent,
     MoneyTransferComponent,
+    PlazoFijoComponent,
+    DepositMoneyComponent,
     TwWidgetComponent,
     OperationsComponent,
     ProfileEditComponent
@@ -115,6 +121,8 @@ import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
     MatGridListModule,
     CommonModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
     MatSortModule
 
   ],
