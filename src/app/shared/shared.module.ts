@@ -37,6 +37,8 @@ import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dial
 
 
 
+
+
 @NgModule({
   declarations: [
     SidebarComponent,
@@ -89,6 +91,7 @@ import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dial
     MatTableModule,
     MatSortModule,
     MatCardModule,
+    
   ]
 })
 export class SharedModule { }
