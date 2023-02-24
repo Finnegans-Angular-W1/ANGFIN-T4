@@ -9,8 +9,8 @@
       <mat-error>Este campo es requerido</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="idBank" placeholder="CBU\CVU" [(ngModel)]="idBank" type="number" minlength="22" maxlength="22" step="false" min="0" required>
-      <mat-error>Este campo es requerido</mat-error>
+      <input matInput name="idBank" placeholder="CBU\CVU" [(ngModel)]="idBank" type="text" pattern="^\d{22}$" required>
+      <mat-error>Ingrese un CBU válido de 22 dígitos</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-select name="entidadBancaria" placeholder="Entidad bancaria" [(ngModel)]="entidadBancaria" required>
@@ -20,7 +20,7 @@
       </mat-select>
       <mat-error>Este campo es requerido</mat-error>
     </mat-form-field>
-  </form>
+  </form>  
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="dialogRef.close()">Cancelar</button>

@@ -1,11 +1,11 @@
   .example-card {
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     max-width: 500px;
   }
 
   .example-header-image {
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     background-image: url(../../../assets/favico.jpg);
     background-size: cover;
     background-position: center;
@@ -13,15 +13,15 @@
 
   .example-header-image{
     display: block;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
   }
 
-  
   mat-card-title{
       text-align: center;
   }
 
   mat-list-item{
+    font-size: 0.4rem;
     text-overflow: ellipsis;
     border-bottom: 1px solid #f3f3f3;
   }
