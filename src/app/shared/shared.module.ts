@@ -33,6 +33,8 @@ import { CreditCardComponent } from './credit-card/credit-card.component';
 import { MatCard, MatCardModule } from '@angular/material/card';
 
 
+
+
 @NgModule({
   declarations: [
     SidebarComponent,
@@ -47,6 +49,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     TwWidgetComponent,
     CreditCardComponent,
     TwWidgetComponent,
+   
   ],
   exports: [
     SidebarComponent,
@@ -81,6 +84,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatSortModule,
     MatCardModule,
+    
   ]
 })
 export class SharedModule { }
