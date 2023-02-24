@@ -28,7 +28,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AlertComponent } from './alerts/alert.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { AlertComponent } from './alerts/alert.component';
 import { TwWidgetComponent } from '../components/tw-widget/tw-widget.component';
 import { CreditCardComponent } from './credit-card/credit-card.component';
 import { MatCard, MatCardModule } from '@angular/material/card';

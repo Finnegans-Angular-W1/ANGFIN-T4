@@ -59,9 +59,9 @@ import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
 
-import { OperationsComponent } from './components/operations/operations.component';
-import { jwtInterceptor } from './core/interceptors/http.interceptor';
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
 
 
 
@@ -83,7 +83,6 @@ import { ProfileEditComponent } from './pages/profile-edit/profile-edit.componen
     BalanceLoadComponent,
     LandingPageComponent,
     MoneyTransferComponent,
-
     TwWidgetComponent,
     OperationsComponent,
     ProfileEditComponent
