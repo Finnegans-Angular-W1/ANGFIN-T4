@@ -15,7 +15,6 @@ export class BalanceLoadComponent implements OnInit {
 
   }
   addItem(transaction: any){
-    console.log(transaction)
   }
 
 }
