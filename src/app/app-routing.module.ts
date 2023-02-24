@@ -22,6 +22,7 @@ import { ContactsComponent } from './shared/contacts/contacts.component';
 import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
 import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'enviar-dinero', component: MoneyTransferComponent, canActivate: [AuthGuard] },
       { path: 'depositar-dinero', component: DepositMoneyComponent, canActivate: [AuthGuard] },
       { path: 'cambiar-password', component: PasswordResetComponent, canActivate: [AuthGuard] },
+      { path: 'editar-perfil', component: ProfileEditComponent, canActivate: [AuthGuard]},
       { path: 'transactions-form', component: TransactionsFormComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
       { path: 'contactos', component:ContactsComponent, canActivate: [AuthGuard] },
