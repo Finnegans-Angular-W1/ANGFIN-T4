@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 col-sm-12 col-lg-6 col-12">
+        <div *ngIf="!loading" class="col-md-10 col-sm-12 col-lg-6 col-12">
             <app-titulos [title]="'EDITAR PERFIL'"></app-titulos>
             <div class="card bg-dark p-5 border-0 shadow rounded-4 mb-5 mt-5">
                 <form [formGroup]="form" (ngSubmit)="submit()">
@@ -28,6 +28,9 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div *ngIf="loading" class="col-md-12 col-sm-12 col-lg-6 col-12">
+            <app-spinner [isLoading]="loading"></app-spinner>
         </div>
     </div>
 </div>

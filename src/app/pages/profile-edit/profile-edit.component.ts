@@ -17,21 +17,25 @@ export class ProfileEditComponent implements OnInit {
 
   form!: FormGroup;
   user!: User;
+  loading = true;
 
-  constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router, private usersService: UsersService) {
-
-    this.form = this.fb.group({
-      first_name: new FormControl('', [Validators.required, Validators.pattern("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")],),
-      last_name: new FormControl('', [Validators.required, Validators.pattern("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")]),
-    })
-
-
-  }
+  constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router, private usersService: UsersService) {}
 
   ngOnInit(): void {
 
-    this.store.select(selectUser).subscribe(user => this.user=user)
+    this.store.select(selectUser).subscribe(user => {
+      this.loading = false;
+      this.user = user;
+      this.createForm();
+    })
 
+  }
+
+  createForm() {
+    this.form = this.fb.group({
+      first_name: new FormControl(this.user.first_name, [Validators.required, Validators.pattern("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")],),
+      last_name: new FormControl(this.user.last_name, [Validators.required, Validators.pattern("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")]),
+    })
   }
 
   submit() {
@@ -52,10 +56,6 @@ export class ProfileEditComponent implements OnInit {
         this.router.navigateByUrl("/home")
       });
     }
-
-
-   
   }
-
-
+  
 }
