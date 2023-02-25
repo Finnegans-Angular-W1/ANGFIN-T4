@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder, ValidationErrors, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, ValidationErrors, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertComponent } from '../../shared/alerts/alert.component';
@@ -34,6 +34,8 @@ export class PlazoFijoComponent implements OnInit {
       startDate: new FormControl<Date | null>(null, [Validators.required]),
       endDate: new FormControl<Date | null>(null, [Validators.required]),
     })
+
+
   };
 
   get startDate() {
@@ -44,7 +46,21 @@ export class PlazoFijoComponent implements OnInit {
     return this.form.controls['endDate'];
   }
 
-  ngOnInit() { };
+
+  ngOnInit() {
+    this.form.get("importe")?.valueChanges.subscribe(selectedValue => {
+      if (selectedValue > this.accountMoney) {
+        this.form.controls['importe'].setValue(0);
+        this.dialog.open(
+          AlertComponent, {
+          data: {
+            title: 'El importe del plazo fijo no puede superar su saldo',
+          }
+        }
+        )
+      }
+    })
+  };
 
   plazoFijo() {
     if (this.form.invalid) {

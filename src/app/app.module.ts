@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+//import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import { MatListModule } from '@angular/material/list';
 
 
@@ -63,6 +65,10 @@ import { DepositMoneyComponent } from './components/deposit-money/deposit-money.
 import { MoneyGraphComponent } from './components/money-graph/money-graph.component';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
 
 
 
@@ -86,6 +92,10 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     MoneyTransferComponent,
     PlazoFijoComponent,
     DepositMoneyComponent,
+    TwWidgetComponent,
+    OperationsComponent,
+    ProfileEditComponent,
+    ShortcutsComponent,
     MoneyGraphComponent,
 
   ],
@@ -109,6 +119,8 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
+    CommonModule,
+    FormsModule,
     MatTableModule,
     MatSortModule,
     FormsModule,
@@ -117,6 +129,8 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule, 
+    MatSortModule
+
     NgxChartsModule
   ],
   providers: [
@@ -124,6 +138,9 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     {
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
