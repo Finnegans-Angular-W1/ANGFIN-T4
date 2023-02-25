@@ -24,7 +24,6 @@ export class PasswordResetComponent {
   }
 
   resetPasswordForm = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', [Validators.required]],
   }, {
@@ -39,7 +38,7 @@ export class PasswordResetComponent {
     }
     this.auth.resetPassword(this.resetPasswordForm.value.password).subscribe(resp => {
       this.store.dispatch(logout());
-      this.router.navigateByUrl('/login');
+      window.location.href = '/login';
     }
     )
   }
