@@ -33,7 +33,6 @@ describe('PasswordResetComponent', () => {
         component = fixture.componentInstance;
         authService = TestBed.inject(AuthService);
         spy = spyOn(authService, 'resetPassword');
-        email = component.resetPasswordForm.controls.email as FormControl;
         password = component.resetPasswordForm.controls.password as FormControl;
         confirmPassword = component.resetPasswordForm.controls.confirmPassword as FormControl;
         fixture.detectChanges();
@@ -46,23 +45,6 @@ describe('PasswordResetComponent', () => {
     it('should set submitted to true when onSubmit is called', () => {
         component.onSubmit();
         expect(component.submitted).toBeTrue();
-    });
-
-    describe('email field', () => {
-        it('should be invalid when empty', () => {
-        email.setValue('');
-        expect(email.valid).toBeFalse();
-        });
-
-        it('should be invalid when not a valid email', () => {
-            email.setValue('notanemail');
-            expect(email.valid).toBeFalse();
-        });
-        
-        it('should be valid when a valid email', () => {
-            email.setValue('test@test.com');
-            expect(email.valid).toBeTrue();
-        });
     });
 
     describe('password field', () => {

@@ -6,6 +6,7 @@ import { User } from 'src/app/core/interfaces/user';
 import { UsersService } from 'src/app/core/services/users.service';
 import { AppState } from 'src/app/core/state/app.state';
 import { selectUser } from 'src/app/core/state/selectors/auth.selectors';
+import { updateUser } from '../../core/state/actions/auth.actions';
 
 @Component({
   selector: 'app-profile-edit',
@@ -46,7 +47,10 @@ export class ProfileEditComponent implements OnInit {
     }
 
     if (this.user.id) {
-      this.usersService.editUser(this.user.id, editUser).subscribe(res => this.router.navigateByUrl("/home"));
+      this.usersService.editUser(this.user.id, editUser).subscribe(res => {
+        this.store.dispatch(updateUser({first_name, last_name}))
+        this.router.navigateByUrl("/home")
+      });
     }
 
 
