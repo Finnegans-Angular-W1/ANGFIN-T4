@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div *ngIf="!loading" class="col-md-10 col-sm-12 col-lg-6 col-12">
+            <app-titulos [title]="'EDITAR PERFIL'"></app-titulos>
+            <div class="card bg-dark p-5 border-0 shadow rounded-4 mb-5 mt-5">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Nombre</mat-label>
+                            <input formControlName="first_name" type="text" matInput>
+                            <mat-error class="text-center">
+                                El nombre es obligatorio.
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Apellido</mat-label>
+                            <input formControlName="last_name" type="text" matInput>
+                            <mat-error class="text-center">
+                                El apellido es obligatorio.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button mat-raised-button color="primary" class="p-1">
+                            CAMBIAR NOMBRE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div *ngIf="loading" class="col-md-12 col-sm-12 col-lg-6 col-12">
+            <app-spinner [isLoading]="loading"></app-spinner>
+        </div>
+    </div>
+</div>

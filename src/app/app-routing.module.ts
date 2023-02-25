@@ -17,7 +17,13 @@ import { OperationsComponent } from './components/operations/operations.componen
 import { TransactionsListComponent } from './pages/transactions-list/transactions-list.component';
 import { AlertComponent } from './shared/alerts/alert.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { ContactsComponent } from './shared/contacts/contacts.component';
+import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
+import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -27,8 +33,16 @@ const routes: Routes = [
     children: [
       { path: 'sidebar', component: SidebarComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-      { path: 'transactions-form', component: TransactionsFormComponent },
+      { path: 'ingresos', component: TransactionsListComponent, canActivate: [AuthGuard] },
+      { path: 'plazosfijos', component: PlazoFijoComponent, canActivate: [AuthGuard] },
+      { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'enviar-dinero', component: MoneyTransferComponent, canActivate: [AuthGuard] },
+      { path: 'depositar-dinero', component: DepositMoneyComponent, canActivate: [AuthGuard] },
+      { path: 'cambiar-password', component: PasswordResetComponent, canActivate: [AuthGuard] },
+      { path: 'editar-perfil', component: ProfileEditComponent, canActivate: [AuthGuard]},
+      { path: 'shortcuts', component: ShortcutsComponent },
       { path: 'currency-converter', component: CurrencyConverterComponent },
+      { path: 'contactos', component:ContactsComponent, canActivate: [AuthGuard] },
       //{ path: 'operations', component: OperationsComponent },
     ]
   },

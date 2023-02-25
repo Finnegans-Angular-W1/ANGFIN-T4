@@ -1,0 +1,10 @@
+.btn {
+    width: calc(50% - 10px);
+}
+
+.btn-wrap-text {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+}

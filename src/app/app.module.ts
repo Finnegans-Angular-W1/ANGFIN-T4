@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+//import { LoadingInterceptor } from './core/services/interceptors/loading.interceptor'
 import { MatListModule } from '@angular/material/list';
 
 
@@ -55,7 +57,16 @@ import { CommonModule } from '@angular/common';
 import { BalanceLoadComponent } from './components/balanceLoad/balanceLoad.component';
 import { ExpensesService } from './core/services/expenses.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { MoneyTransferComponent } from './components/money-transfer/money-transfer.component';
+import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
 
+import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
 
 
 
@@ -76,7 +87,13 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     OperationsComponent,
     BalanceLoadComponent,
     LandingPageComponent,
-
+    MoneyTransferComponent,
+    PlazoFijoComponent,
+    DepositMoneyComponent,
+    TwWidgetComponent,
+    OperationsComponent,
+    ProfileEditComponent,
+    ShortcutsComponent
   ],
   imports: [
     BrowserModule,
@@ -98,18 +115,27 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
+    CommonModule,
+    FormsModule,
     MatTableModule,
     MatSortModule,
     FormsModule,
     MatGridListModule,
     CommonModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
+    MatSortModule
+
   ],
   providers: [
     ExpensesService,
     {
       provide: HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true
     },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

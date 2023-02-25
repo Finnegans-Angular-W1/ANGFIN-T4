@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10 col-sm-12 col-lg-6 col-12">
-            <div class="card p-5 border-0 shadow rounded-4 mb-5 mt-5">
+            <div class="card bg-dark p-5 border-0 shadow rounded-4 mb-5 mt-5">
                 <form [formGroup]="form" (ngSubmit)="submit()">
-                    <p *ngIf="!this.transaction" class="fs-4 fw-bold text-center mb-5">CREAR TRANSACCIÓN</p>
-                    <p *ngIf="this.transaction" class="fs-4 fw-bold text-center mb-5">EDITAR TRANSACCIÓN</p>
+                    <!-- <p *ngIf="!this.transaction" class="fs-4 fw-bold text-center mb-5">CREAR TRANSACCIÓN</p>
+                    <p *ngIf="this.transaction" class="fs-4 fw-bold text-center mb-5">EDITAR TRANSACCIÓN</p> -->
                     <div class="mb-3">
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Monto</mat-label>

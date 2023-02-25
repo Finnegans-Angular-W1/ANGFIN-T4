@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Agregar contacto</h2>
+<div mat-dialog-content class="d-flex justify-content-center align-items-center">
+  <div class="imagen">
+    <img src="assets/logo-footer-nobackground.png" alt="Imagen" class="img-fluid">
+  </div>
+  <form #agregarContactoForm="ngForm">
+    <mat-form-field>
+      <input matInput name="nombre" placeholder="Nombre completo" [(ngModel)]="nombre" required>
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="idBank" placeholder="CBU\CVU" [(ngModel)]="idBank" type="text" pattern="^\d{22}$" required>
+      <mat-error>Ingrese un CBU válido de 22 dígitos</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select name="entidadBancaria" placeholder="Entidad bancaria" [(ngModel)]="entidadBancaria" required>
+        <mat-option *ngFor="let Banco of Bancos" [value]="Banco.value">
+          {{Banco.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+  </form>  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-raised-button color="primary" [disabled]="agregarContactoForm.invalid" (click)="agregarContacto()">Agregar</button>
+</div>
+
