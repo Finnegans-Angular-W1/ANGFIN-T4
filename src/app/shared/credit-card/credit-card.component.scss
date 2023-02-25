@@ -4,8 +4,8 @@
     margin-top: 0.8rem;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
-    min-width: 280px;
+    height: 250px;
+    min-width: 300px;
     background-image: url(../../../assets/card-background.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,7 @@
   }
   
   .card-logo {
-    height: 56px;
+    height: 80px;
     margin-bottom: 10px;
 
     img{
@@ -27,7 +27,7 @@
   }
   
   .card-number {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #ffffff;
     letter-spacing: 0.3rem;
     margin-bottom: 16px;
@@ -39,7 +39,7 @@
   }
   
   .card-name {
-    font-size: 14px;
+    font-size: 20px;
     letter-spacing: 0.2rem;
     color: #ffffff;
   }
