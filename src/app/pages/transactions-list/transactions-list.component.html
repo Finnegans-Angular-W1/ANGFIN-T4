@@ -1,8 +1,2 @@
-<!--<mat-list>
-  <mat-list-item *ngFor="let transaction of transactions">
-    <h3 mat-line>{{transaction.date}}</h3>
-    <p mat-line>{{transaction.amount}}</p>
-  </mat-list-item>
-</mat-list>-->
-
-<app-operations  [transactions$]="transactions$"></app-operations>
+<app-titulos [title]="'TRANSACCIONES'"></app-titulos>
+<app-operations [transactions$]="transactions$"></app-operations>

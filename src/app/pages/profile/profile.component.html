@@ -11,16 +11,5 @@
       <mat-list-item class="d-flex align-items-center justify-content-center"><span>{{accountMoney | currency}}</span></mat-list-item>
     </mat-list>
     <app-credit-card class="d-none d-sm-block d-ms-block d-lg-block d-xl-block"></app-credit-card>
-    <div class="d-grid gap-2 mt-3">
-      <button (click)="createAccount()" mat-raised-button color="primary" class="p-1 btn-lg w-100">
-        <mat-icon>add_circle</mat-icon> Crear cuenta
-      </button>
-      <button (click)="changePassword()" mat-raised-button color="primary" class="p-1 btn-lg w-100">
-        <mat-icon>password</mat-icon> Cambiar contraseña
-      </button>
-      <button (click)="editProfile()" mat-raised-button color="primary" class="p-1 btn-lg w-100">
-        <mat-icon>edit</mat-icon> Editar perfil
-      </button>
-    </div>
   </mat-card-content>
 </mat-card>
