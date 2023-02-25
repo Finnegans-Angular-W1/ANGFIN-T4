@@ -65,6 +65,7 @@ import { DepositMoneyComponent } from './components/deposit-money/deposit-money.
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
+import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
 
 
 
@@ -90,7 +91,8 @@ import { TwWidgetComponent } from './components/tw-widget/tw-widget.component';
     DepositMoneyComponent,
     TwWidgetComponent,
     OperationsComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ShortcutsComponent
   ],
   imports: [
     BrowserModule,

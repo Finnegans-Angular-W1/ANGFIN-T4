@@ -1,0 +1,32 @@
+<div class="row justify-content-center mt-2">
+    <div class="col-12 d-flex justify-content-between text-wrap">
+        <button (click)="createAccount()" mat-stroked-button color="primary" class="btn p-3 text-center me-1 btn-wrap-text">
+            <i class="fas fa-plus-square fa-3x"></i><br>
+            Crear cuenta
+        </button>
+        <button (click)="changePassword()" mat-stroked-button color="primary" class="btn p-3 me-1 btn-wrap-text">
+            <i class="fas fa-unlock-alt fa-3x"></i><br>
+            Cambiar contraseña
+        </button>
+        <button (click)="editProfile()" mat-stroked-button color="primary" class="btn p-3 btn-wrap-text">
+            <i class="fas fa-user-edit fa-3x ms-3"></i><br>
+            Editar perfil
+        </button>
+    </div>
+</div>
+<div class="row justify-content-center mt-2 mb-2">
+    <div class="col-12 d-flex justify-content-between">
+        <button (click)="depositMoney()" mat-stroked-button color="primary" class="btn p-3 me-1 btn-wrap-text">
+            <i class="fas fa-dollar-sign fa-3x"></i><br>
+            Cargar
+        </button>
+        <button (click)="sendMoney()" mat-stroked-button color="primary" class="btn p-3 me-1 btn-wrap-text">
+            <i class="fas fa-share-square fa-3x"></i><br>
+            Transferir
+        </button>
+        <button (click)="showTransactions()" mat-stroked-button color="primary" class="btn p-3 btn-wrap-text">
+            <i class="fas fa-university fa-3x"></i><br>
+            Transacciones
+        </button>
+    </div>
+</div>

@@ -39,6 +39,7 @@ export const logout = createAction(
     '[Logout] Logout user'
 )
 
-export const editUser = createAction(
-    '[Edit View] Edit user'
+export const updateUser = createAction(
+    '[Edit View] Update user',
+    props<{ first_name: string, last_name: string }>()
 )
