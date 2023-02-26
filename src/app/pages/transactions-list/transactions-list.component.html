@@ -1,2 +1,12 @@
-<app-titulos [title]="'TRANSACCIONES'"></app-titulos>
-<app-operations [transactions$]="transactions$"></app-operations>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+            <div class="scrollable">
+                <h1 class="mt-5 ">TRANSACCIONES </h1>
+                <app-operations></app-operations>
+                <h1 class="mt-5 ">BALANCES HISTORICOS DE LA CUENTA</h1>
+                <app-money-graph></app-money-graph>
+            </div>
+        </div>    
+    </div>
+</div>

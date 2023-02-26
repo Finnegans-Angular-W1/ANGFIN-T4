@@ -61,6 +61,8 @@ import { PlazoFijoComponent } from './pages/plazo-fijo/plazo-fijo.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DepositMoneyComponent } from './components/deposit-money/deposit-money.component';
+import { MoneyGraphComponent } from './components/money-graph/money-graph.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
@@ -92,7 +94,9 @@ import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
     TwWidgetComponent,
     OperationsComponent,
     ProfileEditComponent,
-    ShortcutsComponent
+    ShortcutsComponent,
+    MoneyGraphComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -124,8 +128,8 @@ import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-    MatSortModule
-
+    MatSortModule,
+    NgxChartsModule
   ],
   providers: [
     ExpensesService,

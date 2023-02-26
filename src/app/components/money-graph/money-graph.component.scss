@@ -1,0 +1,21 @@
+
+::ng-deep .ngx-charts { 
+    text{
+        fill: #fff!important; 
+    }
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+  }
+
+::ng-deep ngx-charts-axis-label text {
+    font-weight: bold;
+    fill: #ffffff; /*color blanco*/
+  }
