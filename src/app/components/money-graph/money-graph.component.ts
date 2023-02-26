@@ -81,33 +81,25 @@ export class MoneyGraphComponent implements OnInit {
         acc[date][type] += amount;
         return acc;
       }, {});
-    
+  
       // Convertir el objeto agrupado a un array de objetos
       const data = Object.entries(grouped).map(([name, { topup, payment }]) => ({ name, topup, payment, value: topup - payment }));
-    
-      // Ordenar los datos por fecha y tipo
-      data.sort((a, b) => {
-        const dateComparison = a.name.localeCompare(b.name);
-        if (dateComparison !== 0) {
-          return dateComparison;
-        }
-        return a.topup ? -1 : 1;
-      });
-    
+  
+      // Ordenar los datos por fecha
+      data.sort((a, b) => a.name.localeCompare(b.name));
+  
       // Sumar los valores de los días anteriores
-      let sum = 0;
-      for (let i = 0; i < data.length; i++) {
+      let sum = data[0].value;
+      for (let i = 1; i < data.length; i++) {
         sum += data[i].value;
         data[i].value = sum;
       }
-    
+  
       // Asignar los datos al gráfico
       this.single = data.map(({ name, value }) => ({ name, value }));
       
     });
-
-    
   }
-
+  
 
 }
