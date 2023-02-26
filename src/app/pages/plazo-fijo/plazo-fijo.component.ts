@@ -24,7 +24,7 @@ export class PlazoFijoComponent implements OnInit {
   user: Observable<User>;
   usuario!: User;
   accountMoney!: number;
-  plazosfijoshechos: Array<any> = [{ concepto: "Herencia", endDate: 'Sun Mar 26 2023 00:00:00 GMT-0300', importe: 156000, startDate: 'Sun Feb 26 2023 00:00:00 GMT-0300' }, { concepto: "Devolución Ganancias", endDate: 'Sun Mar 29 2023 00:00:00 GMT-0300', importe: 6500, startDate: 'Sun Jan 16 2023 00:00:00 GMT-0300' }];
+  plazosfijoshechos: Array<any> = [{ concepto: "Herencia", endDate: 'Sun Mar 26 2023 00:00:00 GMT-0300', importe: 156000, startDate: 'Sun Feb 26 2023 00:00:00 GMT-0300' }, { concepto: "Honorarios", endDate: 'Sun Mar 29 2023 00:00:00 GMT-0300', importe: 6500, startDate: 'Sun Jan 16 2023 00:00:00 GMT-0300' }];
   saldoConInteres!: number;
   displayedColumns: string[] = ['concepto', 'Liquidación', 'Saldo', 'Suscripción'];
   dataSource = this.plazosfijoshechos;
