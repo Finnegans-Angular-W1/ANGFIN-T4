@@ -21,7 +21,9 @@ export class PlazoFijoComponent implements OnInit {
   user: Observable<User>;
   usuario!: User;
   accountMoney!: number;
-  plazosfijoshechos: any = []
+  plazosfijoshechos: Array<any> = [{ concepto: "Herencia", endDate: 22 - 3 - 2023, importe: 156000, startDate: 22 - 1 - 2023 }, { concepto: "Devolución Ganancias", endDate: 20 - 3 - 2023, importe: 6500, startDate: 20 - 1 - 2023 }];
+  saldoConInteres!: number;
+
 
   constructor(private fb: FormBuilder, private router: Router, private dialog: MatDialog, private http: HttpClient, private accountsService: AccountsService, private store: Store<AppState>) {
     this.user = this.store.select(selectUser);
@@ -49,6 +51,7 @@ export class PlazoFijoComponent implements OnInit {
 
   ngOnInit() {
     this.form.get("importe")?.valueChanges.subscribe(selectedValue => {
+      this.saldoConInteres = selectedValue * 1.60;
       if (selectedValue > this.accountMoney) {
         this.form.controls['importe'].setValue(0);
         this.dialog.open(
@@ -66,6 +69,9 @@ export class PlazoFijoComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    this.plazosfijoshechos.push(this.form.value)
+    this.accountMoney = this.accountMoney - this.form.get("importe")?.value;
+    console.log(this.plazosfijoshechos);
     this.dialog.open(
       AlertComponent, {
       data: {
