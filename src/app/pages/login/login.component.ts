@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private store: Store<AppState>, private router: Router, private dialog: MatDialog ){
     this.form = this.fb.group({
-      email:new FormControl('danielgomezv2@gmail.com',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      password:new FormControl ('abc123456',[Validators.required,Validators.minLength(6)]),
+      email:new FormControl('',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      password:new FormControl ('',[Validators.required,Validators.minLength(6)]),
     })
   }
 
