@@ -1,45 +1,79 @@
 <mat-card class="example-card row justify-content-center align-items-center m-3">
-    <div class="mx-auto w-50">
-        <p class="mt-2 fs-4 text-center">Ingrese los valores del plazo fijo</p>
-        <form [formGroup]="form" (ngSubmit)="plazoFijo()" id="plazoFijoForm">
-            <div class="mb-1 mt-5">
-                <h3>Su saldo es de {{accountMoney | currency}}</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="mx-auto w-50">
+                    <p class="mt-2 fs-4 text-center">Ingreso valores plazo fijo</p>
+                    <form [formGroup]="form" (ngSubmit)="plazoFijo()" id="plazoFijoForm">
+                        <div class="mb-1 mt-5">
+                            <h3>Su saldo es de {{accountMoney | currency}}</h3>
+                        </div>
+                        <div class="mb-1">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Importe a invertir</mat-label>
+                                <input matInput autocomplete="off" formControlName="importe" type="number">
+                                <mat-error class="text-center">
+                                    Por favor ingrese un importe correcto
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mb-3">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Concepto</mat-label>
+                                <input type="concepto" matInput autocomplete="off" formControlName="concepto">
+                                <mat-error class="text-center">
+                                    Por favor ingrese un concepto de transferencia
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mb-3">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Ingrese fechas</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                    <input matStartDate formControlName="startDate" placeholder="Start date">
+                                    <input matEndDate formControlName="endDate" placeholder="End date">
+                                </mat-date-range-input>
+                                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <h3>El monto con intereses de su plazo fijo es {{saldoConInteres | currency}}</h3>
+                        </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button mat-raised-button color="primary" class="p-2">
+                                Crear Plazo Fijo
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-1">
-                <mat-form-field class="w-100" appearance="outline">
-                    <mat-label>Importe a invertir</mat-label>
-                    <input matInput autocomplete="off" formControlName="importe" type="number">
-                    <mat-error class="text-center">
-                        Por favor ingrese un importe correcto
-                    </mat-error>
-                </mat-form-field>
+            <div class="col-lg-6 col-md-12">
+                <div class="scrollable">
+                    <h3>Historial plazos fijos</h3>
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-responsive">
+                        <ng-container matColumnDef="concepto">
+                            <th mat-header-cell *matHeaderCellDef> Concepto </th>
+                            <td mat-cell *matCellDef="let element"> {{element.concepto}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Liquidación">
+                            <th mat-header-cell *matHeaderCellDef> Liquidación </th>
+                            <td mat-cell *matCellDef="let element"> {{element.endDate | date: "MM/dd/yyyy" }}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="Saldo">
+                            <th mat-header-cell *matHeaderCellDef> Saldo </th>
+                            <td mat-cell *matCellDef="let element"> {{element.importe | currency }} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Suscripción">
+                            <th mat-header-cell *matHeaderCellDef> Suscripción </th>
+                            <td mat-cell *matCellDef="let element"> {{element.startDate | date: "MM/dd/yyyy" }}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
             </div>
-            <div class="mb-3">
-                <mat-form-field class="w-100" appearance="outline">
-                    <mat-label>Concepto</mat-label>
-                    <input type="concepto" matInput autocomplete="off" formControlName="concepto">
-                    <mat-error class="text-center">
-                        Por favor ingrese un concepto de transferencia
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="mb-3">
-                <mat-form-field class="w-100" appearance="outline">
-                    <mat-label>Ingrese fechas</mat-label>
-                    <mat-date-range-input [rangePicker]="picker">
-                        <input matStartDate formControlName="startDate" placeholder="Start date">
-                        <input matEndDate formControlName="endDate" placeholder="End date">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker></mat-date-range-picker>
-                </mat-form-field>
-            </div>
-            <div class="d-grid gap-2 mb-3">
-                <button mat-raised-button color="primary" class="p-2">
-                    Crear Plazo Fijo
-                </button>
-            </div>
-        </form>
+        </div>
     </div>
 </mat-card>
