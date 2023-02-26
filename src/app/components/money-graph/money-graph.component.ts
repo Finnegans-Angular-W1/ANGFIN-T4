@@ -3,67 +3,111 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { TransactionsService } from 'src/app/core/services/transactions.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../core/state/app.state';
-import { selectUser } from '../../core/state/selectors/auth.selectors';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-money-graph',
   templateUrl: './money-graph.component.html',
   styleUrls: ['./money-graph.component.scss'],
-  /*template: `
-    <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-      [barPadding]="barPadding"
-      [roundEdges]="roundEdges"
-      [animations]="animations"
-    ></ngx-charts-bar-vertical>
-  `*/
 })
 export class MoneyGraphComponent implements OnInit {
    
   
   single: { name: string, value: number }[] = [];
-  view: [number,number] = [700, 400];
+  view: [number,number] = [0, 0];
 
   // opciones del gráfico
-  showLegend: boolean = true;
+  showLegend: boolean = false;
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   showXAxisLabel: boolean = true;
+  showGridLines: boolean = false;
   xAxisLabel: string = 'Fecha';
   showYAxisLabel: boolean = true;
   yAxisLabel: string = 'Dinero';
   barPadding: number = 50;
   roundEdges: boolean = true;
   animations: boolean = true;
+  
+  
 
   // configuración de colores
-  colorScheme: any = { domain: ['green', 'red'] };
+  colorScheme: Color = {
+    name: 'rosado',
+    selectable: true,
+    group: ScaleType.Ordinal,
+    domain: [
+      '#f06292',
+      '#ec407a',
+      '#e91e63',
+      '#d81b60',
+      '#c2185b',
+      '#ad1457',
+      '#880e4f',
+      '#ff80ab',
+      '#ff4081',
+      '#f50057',
+      '#c51162'
+    ]
+  };
+  
   
 
   // gradiente de colores
   gradient: boolean = false;
 
-  userId: any = 0;
+  
+
+
+
+ 
 
   constructor(private store: Store<AppState>, private transactionsService: TransactionsService) {}
 
-  ngOnInit() {   
+  ngOnInit() {
     this.transactionsService.getTransactions().subscribe((transactions:any[]) => {
-            
-            const incomes = transactions.filter(t => t.type === 'topup').map(t => ({ name: t.date, value: t.amount }));
-            const expenses = transactions.filter(t => t.type === 'payment').map(t => ({ name: t.date, value: -t.amount }));
-            this.single = [...incomes, ...expenses].sort((a, b) => a.name.localeCompare(b.name));
-          });
+      
+      // Agrupar las transacciones por fecha y tipo
+      const grouped: { [name: string]: { topup: number, payment: number } } = transactions.reduce((acc, t) => {
+        const date = t.date.split('T')[0];
+        const type = t.type;
+        const amount = parseFloat(t.amount);
+        if (!acc[date]) {
+          acc[date] = {};
+        }
+        if (!acc[date][type]) {
+          acc[date][type] = 0;
+        }
+        acc[date][type] += amount;
+        return acc;
+      }, {});
+    
+      // Convertir el objeto agrupado a un array de objetos
+      const data = Object.entries(grouped).map(([name, { topup, payment }]) => ({ name, topup, payment, value: topup - payment }));
+    
+      // Ordenar los datos por fecha y tipo
+      data.sort((a, b) => {
+        const dateComparison = a.name.localeCompare(b.name);
+        if (dateComparison !== 0) {
+          return dateComparison;
+        }
+        return a.topup ? -1 : 1;
+      });
+    
+      // Sumar los valores de los días anteriores
+      let sum = 0;
+      for (let i = 0; i < data.length; i++) {
+        sum += data[i].value;
+        data[i].value = sum;
+      }
+    
+      // Asignar los datos al gráfico
+      this.single = data.map(({ name, value }) => ({ name, value }));
+      
+    });
+
+    
   }
+
+
 }

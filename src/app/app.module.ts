@@ -129,8 +129,7 @@ import { ShortcutsComponent } from './components/shortcuts/shortcuts.component';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-    MatSortModule
-
+    MatSortModule,
     NgxChartsModule
   ],
   providers: [

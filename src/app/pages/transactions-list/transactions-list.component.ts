@@ -12,17 +12,11 @@ import { TransactionsService } from 'src/app/core/services/transactions.service'
 })
 export class TransactionsListComponent implements OnInit {
 
-  userId: any = 0;
   transactions$: any;
 
   constructor(private http: HttpClient, private store: Store<AppState>, private transactionsService: TransactionsService) {
     this.transactions$=this.transactionsService.getTransactions()
   }
 
-  ngOnInit() {
-    this.store.select(selectUser)
-      .subscribe(user => {
-        this.userId = user.id;
-      });
-  }
+  ngOnInit() {}
 }
