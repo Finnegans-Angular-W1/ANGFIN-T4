@@ -83,7 +83,7 @@ export class MoneyGraphComponent implements OnInit {
       }, {});
   
       // Convertir el objeto agrupado a un array de objetos
-      const data = Object.entries(grouped).map(([name, { topup, payment }]) => ({ name, topup, payment, value: topup - payment }));
+      const data = Object.entries(grouped).map(([name, { topup, payment }]) => ({ name, topup, payment, value: topup ?? 0 - payment ?? 0 }));
   
       // Ordenar los datos por fecha
       data.sort((a, b) => a.name.localeCompare(b.name));
