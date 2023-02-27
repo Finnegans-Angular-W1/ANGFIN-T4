@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { RouterModule, Routes } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {  MatSidenavModule } from '@angular/material/sidenav';
-import {  MatToolbarModule } from '@angular/material/toolbar';
-import {  MatListModule } from '@angular/material/list';
-import {  MatIconModule } from '@angular/material/icon';
-import {  MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitulosComponent } from './titulos/titulos.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -18,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { InvestmentCalcComponent } from './investment-calc/investment-calc.component';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TransactionsFormComponent } from './transactions-form/transactions-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,15 +28,10 @@ import { AlertComponent } from './alerts/alert.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { CreditCardComponent } from './credit-card/credit-card.component';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DeleteContactDialogComponent } from './delete-contact-dialog/delete-contact-dialog.component';
 import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dialog.component';
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -88,7 +82,6 @@ import { AddContactDialogComponent } from './add-contact-dialog/add-contact-dial
     MatTableModule,
     MatSortModule,
     MatCardModule,
-    
   ]
 })
 export class SharedModule { }
